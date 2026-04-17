@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  benchmark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: agent-orchestration-benchmark:latest
+    container_name: agent-bench
+    environment:
+      - PYTHONUNBUFFERED=1
+      - USE_MOCK_LLM=1
+    volumes:
+      - ./results:/app/results:rw
+      - ./fixtures:/app/fixtures:ro
+    command: ["--frameworks", "all", "--output", "/app/results/latest.json"]
+
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: agent-orchestration-benchmark:latest
+    container_name: agent-bench-tests
+    entrypoint: ["python", "-m", "pytest", "tests/", "-v"]

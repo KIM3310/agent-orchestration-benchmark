@@ -1,0 +1,55 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-test:
+    name: lint + test + dry-run bench
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install runtime + dev dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Ruff lint
+        run: python -m ruff check src tests
+
+      - name: Black format check
+        run: python -m black --check src tests
+
+      - name: Pytest
+        run: python -m pytest tests/ -v --cov=src --cov-report=term-missing
+
+      - name: Dry-run benchmark (mock LLM)
+        env:
+          USE_MOCK_LLM: "1"
+        run: |
+          python -m scripts.run_bench \
+            --frameworks stage-pilot-style \
+            --output results/ci-${{ matrix.python-version }}.json
+
+      - name: Upload bench artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bench-results-py${{ matrix.python-version }}
+          path: results/ci-${{ matrix.python-version }}.json
+          if-no-files-found: ignore

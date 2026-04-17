@@ -1,0 +1,2904 @@
+{
+  "generated_at": "2026-04-16T14:30:00+00:00",
+  "model": "gpt-4o-mini",
+  "n_prompts": 20,
+  "config": {
+    "seed": 20260416,
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "replay_trials": 3,
+    "use_mock_llm": true
+  },
+  "summaries": [
+    {
+      "framework": "stage-pilot-style",
+      "n_prompts": 20,
+      "tool_call_success_rate": 1.0,
+      "final_answer_quality": 0.95,
+      "latency_p50_ms": 8.4,
+      "latency_p95_ms": 21.3,
+      "latency_p99_ms": 32.1,
+      "tokens_in": 1768,
+      "tokens_out": 1180,
+      "total_cost_usd": 0.000973,
+      "retry_count": 0,
+      "exception_rate": 0.0,
+      "deterministic_replay_rate": 1.0
+    },
+    {
+      "framework": "langgraph",
+      "n_prompts": 20,
+      "tool_call_success_rate": 0.95,
+      "final_answer_quality": 0.9,
+      "latency_p50_ms": 18.7,
+      "latency_p95_ms": 64.5,
+      "latency_p99_ms": 102.3,
+      "tokens_in": 2787,
+      "tokens_out": 1815,
+      "total_cost_usd": 0.001507,
+      "retry_count": 3,
+      "exception_rate": 0.05,
+      "deterministic_replay_rate": 0.9
+    },
+    {
+      "framework": "crewai",
+      "n_prompts": 20,
+      "tool_call_success_rate": 0.85,
+      "final_answer_quality": 0.85,
+      "latency_p50_ms": 31.4,
+      "latency_p95_ms": 110.2,
+      "latency_p99_ms": 178.6,
+      "tokens_in": 4684,
+      "tokens_out": 2724,
+      "total_cost_usd": 0.002337,
+      "retry_count": 7,
+      "exception_rate": 0.1,
+      "deterministic_replay_rate": 0.75
+    },
+    {
+      "framework": "autogen",
+      "n_prompts": 20,
+      "tool_call_success_rate": 0.9,
+      "final_answer_quality": 0.8,
+      "latency_p50_ms": 25.6,
+      "latency_p95_ms": 85.4,
+      "latency_p99_ms": 142.9,
+      "tokens_in": 3594,
+      "tokens_out": 2397,
+      "total_cost_usd": 0.001977,
+      "retry_count": 5,
+      "exception_rate": 0.05,
+      "deterministic_replay_rate": 0.85
+    }
+  ],
+  "observations": {
+    "stage-pilot-style": [
+      {
+        "prompt_id": "p-001",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 95,
+        "tokens_out": 57,
+        "latency_ms": 10.46,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "f88ae2fc74a6aa3b",
+          "f88ae2fc74a6aa3b",
+          "f88ae2fc74a6aa3b"
+        ]
+      },
+      {
+        "prompt_id": "p-002",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 96,
+        "tokens_out": 57,
+        "latency_ms": 8.94,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "2e259a3cb19ca283",
+          "2e259a3cb19ca283",
+          "2e259a3cb19ca283"
+        ]
+      },
+      {
+        "prompt_id": "p-003",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 86,
+        "tokens_out": 66,
+        "latency_ms": 7.876,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "6c2c7e1c5035be92",
+          "6c2c7e1c5035be92",
+          "6c2c7e1c5035be92"
+        ]
+      },
+      {
+        "prompt_id": "p-004",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 96,
+        "tokens_out": 52,
+        "latency_ms": 8.989,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "1edf431fa2ba583e",
+          "1edf431fa2ba583e",
+          "1edf431fa2ba583e"
+        ]
+      },
+      {
+        "prompt_id": "p-005",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 93,
+        "tokens_out": 68,
+        "latency_ms": 9.078,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "458ca123016b107b",
+          "458ca123016b107b",
+          "458ca123016b107b"
+        ]
+      },
+      {
+        "prompt_id": "p-006",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 87,
+        "tokens_out": 63,
+        "latency_ms": 9.692,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "21955c42f26f72fe",
+          "21955c42f26f72fe",
+          "21955c42f26f72fe"
+        ]
+      },
+      {
+        "prompt_id": "p-007",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 81,
+        "tokens_out": 52,
+        "latency_ms": 10.067,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "a660f5f1631e0889",
+          "a660f5f1631e0889",
+          "a660f5f1631e0889"
+        ]
+      },
+      {
+        "prompt_id": "p-008",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 83,
+        "tokens_out": 58,
+        "latency_ms": 7.871,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "cd7fa62006e92f45",
+          "cd7fa62006e92f45",
+          "cd7fa62006e92f45"
+        ]
+      },
+      {
+        "prompt_id": "p-009",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 95,
+        "tokens_out": 58,
+        "latency_ms": 9.586,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "270ccfb9c51d4d9f",
+          "270ccfb9c51d4d9f",
+          "270ccfb9c51d4d9f"
+        ]
+      },
+      {
+        "prompt_id": "p-010",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 90,
+        "tokens_out": 63,
+        "latency_ms": 8.042,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "f25b25fddb1d97e3",
+          "f25b25fddb1d97e3",
+          "f25b25fddb1d97e3"
+        ]
+      },
+      {
+        "prompt_id": "p-011",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 92,
+        "tokens_out": 54,
+        "latency_ms": 8.801,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "d1957d5ff6882c89",
+          "d1957d5ff6882c89",
+          "d1957d5ff6882c89"
+        ]
+      },
+      {
+        "prompt_id": "p-012",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 84,
+        "tokens_out": 61,
+        "latency_ms": 8.865,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "f1800588018fbc76",
+          "f1800588018fbc76",
+          "f1800588018fbc76"
+        ]
+      },
+      {
+        "prompt_id": "p-013",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 83,
+        "tokens_out": 62,
+        "latency_ms": 8.971,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "2cd4bc5ad77555f2",
+          "2cd4bc5ad77555f2",
+          "2cd4bc5ad77555f2"
+        ]
+      },
+      {
+        "prompt_id": "p-014",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 94,
+        "tokens_out": 58,
+        "latency_ms": 8.673,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "0737b69cdbf5957c",
+          "0737b69cdbf5957c",
+          "0737b69cdbf5957c"
+        ]
+      },
+      {
+        "prompt_id": "p-015",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 89,
+        "tokens_out": 53,
+        "latency_ms": 9.167,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "f0a12b56b599526f",
+          "f0a12b56b599526f",
+          "f0a12b56b599526f"
+        ]
+      },
+      {
+        "prompt_id": "p-016",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 81,
+        "tokens_out": 53,
+        "latency_ms": 9.332,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "cacfd400b50e61a4",
+          "cacfd400b50e61a4",
+          "cacfd400b50e61a4"
+        ]
+      },
+      {
+        "prompt_id": "p-017",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 81,
+        "tokens_out": 66,
+        "latency_ms": 7.731,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "4e0cde91cbf0a6d1",
+          "4e0cde91cbf0a6d1",
+          "4e0cde91cbf0a6d1"
+        ]
+      },
+      {
+        "prompt_id": "p-018",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 79,
+        "tokens_out": 68,
+        "latency_ms": 9.53,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "c3a4b4653ef848e9",
+          "c3a4b4653ef848e9",
+          "c3a4b4653ef848e9"
+        ]
+      },
+      {
+        "prompt_id": "p-019",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 91,
+        "tokens_out": 60,
+        "latency_ms": 21.965,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "dfa747faa5736ed2",
+          "dfa747faa5736ed2",
+          "dfa747faa5736ed2"
+        ]
+      },
+      {
+        "prompt_id": "p-020",
+        "framework": "stage-pilot-style",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 92,
+        "tokens_out": 51,
+        "latency_ms": 32.1,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "7194c1ad591a6c1e",
+          "7194c1ad591a6c1e",
+          "7194c1ad591a6c1e"
+        ]
+      }
+    ],
+    "langgraph": [
+      {
+        "prompt_id": "p-001",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 128,
+        "tokens_out": 102,
+        "latency_ms": 15.92,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "407135e202aade4e",
+          "407135e202aade4e",
+          "407135e202aade4e"
+        ]
+      },
+      {
+        "prompt_id": "p-002",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 134,
+        "tokens_out": 90,
+        "latency_ms": 21.592,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "802b4369e6565465",
+          "802b4369e6565465",
+          "802b4369e6565465"
+        ]
+      },
+      {
+        "prompt_id": "p-003",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 149,
+        "tokens_out": 81,
+        "latency_ms": 20.684,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "b815ba9000e8a05e",
+          "b815ba9000e8a05e",
+          "b815ba9000e8a05e"
+        ]
+      },
+      {
+        "prompt_id": "p-004",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 142,
+        "tokens_out": 85,
+        "latency_ms": 17.432,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "0505f7a8767eb6cc",
+          "0505f7a8767eb6cc",
+          "0505f7a8767eb6cc"
+        ]
+      },
+      {
+        "prompt_id": "p-005",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 151,
+        "tokens_out": 90,
+        "latency_ms": 20.834,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "837ef96bb9fca0fb",
+          "837ef96bb9fca0fb",
+          "837ef96bb9fca0fb"
+        ]
+      },
+      {
+        "prompt_id": "p-006",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 131,
+        "tokens_out": 81,
+        "latency_ms": 20.44,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "1913752a61560380",
+          "1913752a61560380",
+          "1913752a61560380"
+        ]
+      },
+      {
+        "prompt_id": "p-007",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 158,
+        "tokens_out": 83,
+        "latency_ms": 23.044,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "2deeff8154364f95",
+          "2deeff8154364f95",
+          "2deeff8154364f95"
+        ]
+      },
+      {
+        "prompt_id": "p-008",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 119,
+        "tokens_out": 81,
+        "latency_ms": 15.156,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "e8ed4f6565dd8244",
+          "e8ed4f6565dd8244",
+          "e8ed4f6565dd8244"
+        ]
+      },
+      {
+        "prompt_id": "p-009",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 123,
+        "tokens_out": 86,
+        "latency_ms": 17.919,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "4a7411f4c6ed9fbf",
+          "4a7411f4c6ed9fbf",
+          "4a7411f4c6ed9fbf"
+        ]
+      },
+      {
+        "prompt_id": "p-010",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 122,
+        "tokens_out": 86,
+        "latency_ms": 20.566,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "1d50bb4a7d340b75",
+          "1d50bb4a7d340b75",
+          "1d50bb4a7d340b75"
+        ]
+      },
+      {
+        "prompt_id": "p-011",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 129,
+        "tokens_out": 100,
+        "latency_ms": 15.74,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "f1158c3ea937ea5e",
+          "f1158c3ea937ea5e",
+          "f1158c3ea937ea5e"
+        ]
+      },
+      {
+        "prompt_id": "p-012",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 155,
+        "tokens_out": 84,
+        "latency_ms": 15.366,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "14444ed2aa533dac",
+          "14444ed2aa533dac",
+          "14444ed2aa533dac"
+        ]
+      },
+      {
+        "prompt_id": "p-013",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 143,
+        "tokens_out": 105,
+        "latency_ms": 23.052,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "46be1a9ae229dca2",
+          "46be1a9ae229dca2",
+          "46be1a9ae229dca2"
+        ]
+      },
+      {
+        "prompt_id": "p-014",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 121,
+        "tokens_out": 97,
+        "latency_ms": 16.747,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "9e177586274c06b3",
+          "9e177586274c06b3",
+          "9e177586274c06b3"
+        ]
+      },
+      {
+        "prompt_id": "p-015",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 142,
+        "tokens_out": 100,
+        "latency_ms": 17.027,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "fbdd022415eb1311",
+          "fbdd022415eb1311",
+          "fbdd022415eb1311"
+        ]
+      },
+      {
+        "prompt_id": "p-016",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 157,
+        "tokens_out": 102,
+        "latency_ms": 19.731,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "03b8e157372dbd17",
+          "03b8e157372dbd17",
+          "03b8e157372dbd17"
+        ]
+      },
+      {
+        "prompt_id": "p-017",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 143,
+        "tokens_out": 103,
+        "latency_ms": 16.934,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "0028c5c5598e697d",
+          "0028c5c5598e697d",
+          "0028c5c5598e697d"
+        ]
+      },
+      {
+        "prompt_id": "p-018",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 155,
+        "tokens_out": 93,
+        "latency_ms": 22.671,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "2af65ccc0a5e9fbb",
+          "2af65ccc0a5e9fbb",
+          "2af65ccc0a5e9fbb"
+        ]
+      },
+      {
+        "prompt_id": "p-019",
+        "framework": "langgraph",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 158,
+        "tokens_out": 84,
+        "latency_ms": 73.978,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "c5b411275954b83a",
+          "c5b411275954b83a",
+          "c5b411275954b83a"
+        ]
+      },
+      {
+        "prompt_id": "p-020",
+        "framework": "langgraph",
+        "final_answer": "",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT * FROM sales"
+            },
+            "ok": false,
+            "result_preview": "",
+            "error": "invalid JSON arguments"
+          }
+        ],
+        "tokens_in": 127,
+        "tokens_out": 82,
+        "latency_ms": 102.3,
+        "retry_count": 1,
+        "exception": "",
+        "replay_fingerprints": [
+          "1fe06b526dd89b66",
+          "1fe06b526dd89b66",
+          "1fe06b526dd89b66"
+        ]
+      }
+    ],
+    "crewai": [
+      {
+        "prompt_id": "p-001",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 252,
+        "tokens_out": 136,
+        "latency_ms": 35.233,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "65912921896a7ae3",
+          "65912921896a7ae3",
+          "65912921896a7ae3"
+        ]
+      },
+      {
+        "prompt_id": "p-002",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 231,
+        "tokens_out": 133,
+        "latency_ms": 26.924,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "30cde5aa0291c882",
+          "30cde5aa0291c882",
+          "30cde5aa0291c882"
+        ]
+      },
+      {
+        "prompt_id": "p-003",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 242,
+        "tokens_out": 138,
+        "latency_ms": 34.472,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "6e6b8f05f22d893f",
+          "6e6b8f05f22d893f",
+          "6e6b8f05f22d893f"
+        ]
+      },
+      {
+        "prompt_id": "p-004",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 236,
+        "tokens_out": 155,
+        "latency_ms": 36.754,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "f41deefc1fc5454a",
+          "f41deefc1fc5454a",
+          "f41deefc1fc5454a"
+        ]
+      },
+      {
+        "prompt_id": "p-005",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 241,
+        "tokens_out": 140,
+        "latency_ms": 27.663,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "b9d9c1d21632eea6",
+          "b9d9c1d21632eea6",
+          "b9d9c1d21632eea6"
+        ]
+      },
+      {
+        "prompt_id": "p-006",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 250,
+        "tokens_out": 128,
+        "latency_ms": 30.996,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "e062552466eb85bb",
+          "a14725e75f999674",
+          "bc4695d03c05272e"
+        ]
+      },
+      {
+        "prompt_id": "p-007",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 252,
+        "tokens_out": 128,
+        "latency_ms": 30.551,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "fecf52f3d7859a94",
+          "fecf52f3d7859a94",
+          "fecf52f3d7859a94"
+        ]
+      },
+      {
+        "prompt_id": "p-008",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 195,
+        "tokens_out": 126,
+        "latency_ms": 28.212,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "dea69722980ef3be",
+          "16bd06db7d1fab2a",
+          "616d5d2be8865800"
+        ]
+      },
+      {
+        "prompt_id": "p-009",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 223,
+        "tokens_out": 123,
+        "latency_ms": 30.206,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "5059d81f2b2d4a70",
+          "5059d81f2b2d4a70",
+          "5059d81f2b2d4a70"
+        ]
+      },
+      {
+        "prompt_id": "p-010",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 234,
+        "tokens_out": 155,
+        "latency_ms": 30.883,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "c3a893ea73754c59",
+          "c3a893ea73754c59",
+          "c3a893ea73754c59"
+        ]
+      },
+      {
+        "prompt_id": "p-011",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 242,
+        "tokens_out": 148,
+        "latency_ms": 34.459,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "ff8cbecef8eaa194",
+          "ff8cbecef8eaa194",
+          "ff8cbecef8eaa194"
+        ]
+      },
+      {
+        "prompt_id": "p-012",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 214,
+        "tokens_out": 144,
+        "latency_ms": 25.79,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "ff4a2326bfa7b635",
+          "ff4a2326bfa7b635",
+          "ff4a2326bfa7b635"
+        ]
+      },
+      {
+        "prompt_id": "p-013",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 233,
+        "tokens_out": 119,
+        "latency_ms": 28.621,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "3a55cb243c20b6c2",
+          "3a55cb243c20b6c2",
+          "3a55cb243c20b6c2"
+        ]
+      },
+      {
+        "prompt_id": "p-014",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 219,
+        "tokens_out": 123,
+        "latency_ms": 35.87,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "f050733268a4cc74",
+          "ace892f0d87339e8",
+          "01684bae64b5b8ea"
+        ]
+      },
+      {
+        "prompt_id": "p-015",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 251,
+        "tokens_out": 128,
+        "latency_ms": 39.837,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "a846a353bc7612c1",
+          "44769b6f0bbe7e7e",
+          "9463f7fdab642200"
+        ]
+      },
+      {
+        "prompt_id": "p-016",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 220,
+        "tokens_out": 155,
+        "latency_ms": 34.0,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "1af969275c7673ca",
+          "1af969275c7673ca",
+          "1af969275c7673ca"
+        ]
+      },
+      {
+        "prompt_id": "p-017",
+        "framework": "crewai",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 226,
+        "tokens_out": 156,
+        "latency_ms": 27.519,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "1c976fb1ca6d8d83",
+          "1c976fb1ca6d8d83",
+          "1c976fb1ca6d8d83"
+        ]
+      },
+      {
+        "prompt_id": "p-018",
+        "framework": "crewai",
+        "final_answer": "",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT * FROM sales"
+            },
+            "ok": false,
+            "result_preview": "",
+            "error": "invalid JSON arguments"
+          }
+        ],
+        "tokens_in": 249,
+        "tokens_out": 125,
+        "latency_ms": 25.134,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "ea896b0d9bfb8ac0",
+          "ea896b0d9bfb8ac0",
+          "ea896b0d9bfb8ac0"
+        ]
+      },
+      {
+        "prompt_id": "p-019",
+        "framework": "crewai",
+        "final_answer": "",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT * FROM sales"
+            },
+            "ok": false,
+            "result_preview": "",
+            "error": "invalid JSON arguments"
+          }
+        ],
+        "tokens_in": 224,
+        "tokens_out": 119,
+        "latency_ms": 95.837,
+        "retry_count": 1,
+        "exception": "",
+        "replay_fingerprints": [
+          "317b411ede5cfaf3",
+          "317b411ede5cfaf3",
+          "317b411ede5cfaf3"
+        ]
+      },
+      {
+        "prompt_id": "p-020",
+        "framework": "crewai",
+        "final_answer": "",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT * FROM sales"
+            },
+            "ok": false,
+            "result_preview": "",
+            "error": "invalid JSON arguments"
+          }
+        ],
+        "tokens_in": 250,
+        "tokens_out": 145,
+        "latency_ms": 178.6,
+        "retry_count": 0,
+        "exception": "ValueError: bad schema",
+        "replay_fingerprints": [
+          "ac24681cad655264",
+          "8be931a0a0a59438",
+          "ecb7ed11124cda60"
+        ]
+      }
+    ],
+    "autogen": [
+      {
+        "prompt_id": "p-001",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 169,
+        "tokens_out": 106,
+        "latency_ms": 23.761,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "23d3056cfbc50174",
+          "23d3056cfbc50174",
+          "23d3056cfbc50174"
+        ]
+      },
+      {
+        "prompt_id": "p-002",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 198,
+        "tokens_out": 112,
+        "latency_ms": 21.409,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "bffc0f7f1bf91e9c",
+          "64cb7122893db354",
+          "d1404eb1b8070e88"
+        ]
+      },
+      {
+        "prompt_id": "p-003",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 206,
+        "tokens_out": 125,
+        "latency_ms": 30.563,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "7e3d8890456eaef9",
+          "7e3d8890456eaef9",
+          "7e3d8890456eaef9"
+        ]
+      },
+      {
+        "prompt_id": "p-004",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 188,
+        "tokens_out": 113,
+        "latency_ms": 29.113,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "82b783180a007a6c",
+          "82b783180a007a6c",
+          "82b783180a007a6c"
+        ]
+      },
+      {
+        "prompt_id": "p-005",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 192,
+        "tokens_out": 130,
+        "latency_ms": 29.417,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "b0d5727197ea4a1e",
+          "b0d5727197ea4a1e",
+          "b0d5727197ea4a1e"
+        ]
+      },
+      {
+        "prompt_id": "p-006",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 181,
+        "tokens_out": 109,
+        "latency_ms": 32.639,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "dd3d4fce469ca725",
+          "dd3d4fce469ca725",
+          "dd3d4fce469ca725"
+        ]
+      },
+      {
+        "prompt_id": "p-007",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 153,
+        "tokens_out": 128,
+        "latency_ms": 28.873,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "4e9780d51f709b4a",
+          "0e4bdc678fa2e65c",
+          "d1096c78d9ff42fc"
+        ]
+      },
+      {
+        "prompt_id": "p-008",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 203,
+        "tokens_out": 103,
+        "latency_ms": 26.605,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "1dd63a05fbdd5afa",
+          "1dd63a05fbdd5afa",
+          "1dd63a05fbdd5afa"
+        ]
+      },
+      {
+        "prompt_id": "p-009",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 155,
+        "tokens_out": 114,
+        "latency_ms": 30.009,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "ca73e62f69f4763f",
+          "ca73e62f69f4763f",
+          "ca73e62f69f4763f"
+        ]
+      },
+      {
+        "prompt_id": "p-010",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 154,
+        "tokens_out": 125,
+        "latency_ms": 23.32,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "f2f1b25075f15278",
+          "3ade345a074a5829",
+          "d81c32735b86f6e3"
+        ]
+      },
+      {
+        "prompt_id": "p-011",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 191,
+        "tokens_out": 130,
+        "latency_ms": 23.01,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "e95a48e9c1b0bc00",
+          "e95a48e9c1b0bc00",
+          "e95a48e9c1b0bc00"
+        ]
+      },
+      {
+        "prompt_id": "p-012",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 190,
+        "tokens_out": 118,
+        "latency_ms": 22.361,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "7bc7a98c31e4929a",
+          "7bc7a98c31e4929a",
+          "7bc7a98c31e4929a"
+        ]
+      },
+      {
+        "prompt_id": "p-013",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 205,
+        "tokens_out": 105,
+        "latency_ms": 25.019,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "f6bf3a16990bdb0c",
+          "f6bf3a16990bdb0c",
+          "f6bf3a16990bdb0c"
+        ]
+      },
+      {
+        "prompt_id": "p-014",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 155,
+        "tokens_out": 120,
+        "latency_ms": 22.005,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "8d11df392bd93887",
+          "8d11df392bd93887",
+          "8d11df392bd93887"
+        ]
+      },
+      {
+        "prompt_id": "p-015",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 160,
+        "tokens_out": 126,
+        "latency_ms": 30.596,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "e8b96073ab4c6c83",
+          "e8b96073ab4c6c83",
+          "e8b96073ab4c6c83"
+        ]
+      },
+      {
+        "prompt_id": "p-016",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 185,
+        "tokens_out": 126,
+        "latency_ms": 25.502,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "2debe9c5fa2abac4",
+          "04c61d46abf831bb",
+          "715e0cbb9c59a0aa"
+        ]
+      },
+      {
+        "prompt_id": "p-017",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 162,
+        "tokens_out": 111,
+        "latency_ms": 20.639,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "28aa4d32b2ef8143",
+          "28aa4d32b2ef8143",
+          "28aa4d32b2ef8143"
+        ]
+      },
+      {
+        "prompt_id": "p-018",
+        "framework": "autogen",
+        "final_answer": "Revenue increased from $4,842.0k to $5,330.0k, a change of +10.1%. The top three departments in the first set are Sales, Engineering, Research; in the second set they are Sales, Engineering, Research.",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT department, revenue_k_usd FROM sales WHERE quarter='Q1' AND year=2024 ORDER BY revenue_k_usd DESC LIMIT 3"
+            },
+            "ok": true,
+            "result_preview": "[{\"department\":\"Sales\",\"revenue_k_usd\":2680.0}]",
+            "error": null
+          },
+          {
+            "name": "summarize_trend",
+            "arguments": {
+              "data_a": "[...]",
+              "data_b": "[...]"
+            },
+            "ok": true,
+            "result_preview": "Revenue increased from $5,330.0k to $4,842.0k, a change of +10.1%.",
+            "error": null
+          }
+        ],
+        "tokens_in": 156,
+        "tokens_out": 134,
+        "latency_ms": 24.624,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "cd3b202b8286ac8b",
+          "cd3b202b8286ac8b",
+          "cd3b202b8286ac8b"
+        ]
+      },
+      {
+        "prompt_id": "p-019",
+        "framework": "autogen",
+        "final_answer": "",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT * FROM sales"
+            },
+            "ok": false,
+            "result_preview": "",
+            "error": "invalid JSON arguments"
+          }
+        ],
+        "tokens_in": 186,
+        "tokens_out": 128,
+        "latency_ms": 76.769,
+        "retry_count": 0,
+        "exception": "",
+        "replay_fingerprints": [
+          "48ca5142d0cd0a37",
+          "48ca5142d0cd0a37",
+          "48ca5142d0cd0a37"
+        ]
+      },
+      {
+        "prompt_id": "p-020",
+        "framework": "autogen",
+        "final_answer": "",
+        "tool_calls": [
+          {
+            "name": "query_sales_data",
+            "arguments": {
+              "sql": "SELECT * FROM sales"
+            },
+            "ok": false,
+            "result_preview": "",
+            "error": "invalid JSON arguments"
+          }
+        ],
+        "tokens_in": 205,
+        "tokens_out": 134,
+        "latency_ms": 142.9,
+        "retry_count": 1,
+        "exception": "",
+        "replay_fingerprints": [
+          "033820d8828b3614",
+          "033820d8828b3614",
+          "033820d8828b3614"
+        ]
+      }
+    ]
+  }
+}

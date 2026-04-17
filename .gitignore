@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Test / coverage artefacts
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+.tox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Static analysis caches
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+
+# IDEs / editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Benchmark output — individual runs are generated artefacts. Sample run is
+# tracked so the README can render without an install.
+results/*.json
+results/*.md
+results/*.html
+!results/sample_run_2026-04-16.json
+
+# Docker build artefacts
+*.pid
