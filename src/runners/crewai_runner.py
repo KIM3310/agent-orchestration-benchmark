@@ -53,7 +53,6 @@ class CrewAIRunner(BaseRunner):
         )
         tokens_in += analyst.tokens_in
         tokens_out += analyst.tokens_out
-        query_result = None
         for raw in analyst.tool_calls:
             name = raw["function"]["name"]
             try:
@@ -73,10 +72,6 @@ class CrewAIRunner(BaseRunner):
             record = dispatch(name, arguments)
             tool_calls.append(record)
             if record.ok:
-                try:
-                    query_result = json.loads(record.result_preview)
-                except json.JSONDecodeError:
-                    query_result = []
                 messages.append(
                     {
                         "role": "tool",
@@ -148,12 +143,8 @@ class CrewAIRunner(BaseRunner):
         obs = self._empty_observation(prompt)
         start = time.perf_counter()
         try:
-            analyst = Agent(
-                role="analyst", goal="write SQL", backstory="quant analyst"
-            )
-            reporter = Agent(
-                role="reporter", goal="summarize", backstory="BI writer"
-            )
+            analyst = Agent(role="analyst", goal="write SQL", backstory="quant analyst")
+            reporter = Agent(role="reporter", goal="summarize", backstory="BI writer")
             crew = Crew(
                 agents=[analyst, reporter],
                 tasks=[
