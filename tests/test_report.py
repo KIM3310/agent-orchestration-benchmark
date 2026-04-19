@@ -12,7 +12,13 @@ def _sample_result():
         "generated_at": "2026-04-16T00:00:00+00:00",
         "model": "gpt-4o-mini",
         "n_prompts": 20,
-        "config": {"seed": 1, "replay_trials": 3, "temperature": 0.0, "max_tokens": 512, "use_mock_llm": True},
+        "config": {
+            "seed": 1,
+            "replay_trials": 3,
+            "temperature": 0.0,
+            "max_tokens": 512,
+            "use_mock_llm": True,
+        },
         "summaries": [
             {
                 "framework": "stage-pilot-style",
@@ -52,8 +58,20 @@ def _sample_result():
                     "framework": "stage-pilot-style",
                     "final_answer": "Revenue increased...",
                     "tool_calls": [
-                        {"name": "query_sales_data", "arguments": {}, "ok": True, "result_preview": "", "error": None},
-                        {"name": "summarize_trend", "arguments": {}, "ok": True, "result_preview": "", "error": None},
+                        {
+                            "name": "query_sales_data",
+                            "arguments": {},
+                            "ok": True,
+                            "result_preview": "",
+                            "error": None,
+                        },
+                        {
+                            "name": "summarize_trend",
+                            "arguments": {},
+                            "ok": True,
+                            "result_preview": "",
+                            "error": None,
+                        },
                     ],
                     "tokens_in": 50,
                     "tokens_out": 25,

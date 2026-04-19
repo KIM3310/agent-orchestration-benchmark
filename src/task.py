@@ -22,7 +22,6 @@ import sqlite3
 from dataclasses import asdict, dataclass
 from typing import Any, Dict, List, Optional, Tuple
 
-
 # ---------------------------------------------------------------------------
 # Tool schemas (OpenAI "tools" format; LangGraph/CrewAI/AutoGen adapters
 # translate these into their native bindings in the runners package)
@@ -168,9 +167,7 @@ def query_sales_data(sql: str) -> List[Dict[str, Any]]:
     return [dict(row) for row in cur.fetchall()]
 
 
-def summarize_trend(
-    data_a: List[Dict[str, Any]], data_b: List[Dict[str, Any]]
-) -> str:
+def summarize_trend(data_a: List[Dict[str, Any]], data_b: List[Dict[str, Any]]) -> str:
     """Produce a deterministic one-paragraph comparison of two result sets.
 
     The summary is computed analytically (no LLM call) so that agent quality

@@ -86,8 +86,7 @@ class AutoGenRunner(BaseRunner):
                         "role": "tool",
                         "tool_call_id": raw.get("id", "?"),
                         "name": name,
-                        "content": record.result_preview
-                        or json.dumps({"error": record.error}),
+                        "content": record.result_preview or json.dumps({"error": record.error}),
                     }
                 )
 
