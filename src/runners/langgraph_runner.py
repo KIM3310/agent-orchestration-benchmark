@@ -103,8 +103,7 @@ class LangGraphRunner(BaseRunner):
                         "role": "tool",
                         "tool_call_id": raw.get("id", "?"),
                         "name": name,
-                        "content": record.result_preview
-                        or json.dumps({"error": record.error}),
+                        "content": record.result_preview or json.dumps({"error": record.error}),
                     }
                 )
 
@@ -140,7 +139,7 @@ class LangGraphRunner(BaseRunner):
         return obs
 
     def _build_live_graph(self):  # pragma: no cover - requires langgraph
-        from langgraph.graph import StateGraph, END  # type: ignore
+        from langgraph.graph import END, StateGraph  # type: ignore
 
         def agent_node(state):
             return state
