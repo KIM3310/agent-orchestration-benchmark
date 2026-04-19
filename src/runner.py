@@ -12,12 +12,11 @@ from __future__ import annotations
 import json
 import logging
 import time
-from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from .config import BenchmarkConfig, RESULTS_DIR
+from .config import RESULTS_DIR, BenchmarkConfig
 from .fixtures import Prompt, load_prompts
 from .metrics import FrameworkSummary, PromptObservation, aggregate
 from .runners.base import BaseRunner
@@ -70,8 +69,7 @@ class BenchmarkRunner:
             },
             "summaries": [s.as_row() for s in summaries],
             "observations": {
-                fw: [_obs_to_dict(o) for o in obs]
-                for fw, obs in per_framework_observations.items()
+                fw: [_obs_to_dict(o) for o in obs] for fw, obs in per_framework_observations.items()
             },
         }
 

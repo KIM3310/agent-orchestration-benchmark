@@ -19,11 +19,10 @@ import time
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 
-from ..config import BenchmarkConfig
 from ..fixtures import Prompt
 from ..metrics import PromptObservation
 from ..task import ALL_TOOL_SCHEMAS, ToolCallRecord, dispatch
-from .base import BaseRunner, MockLLM
+from .base import BaseRunner
 
 log = logging.getLogger(__name__)
 
@@ -81,7 +80,7 @@ class StagePilotStyleRunner(BaseRunner):
             tool_calls=[],
         )
 
-        for step in range(self.MAX_STEPS):
+        for _step in range(self.MAX_STEPS):
             completion = self._call_llm(prompt, state)
             state.tokens_in += completion.tokens_in
             state.tokens_out += completion.tokens_out
@@ -122,9 +121,7 @@ class StagePilotStyleRunner(BaseRunner):
             tools=ALL_TOOL_SCHEMAS,
         )
 
-    def _execute_tool_calls(
-        self, state: LoopState, raw_calls: List[Dict[str, Any]]
-    ) -> bool:
+    def _execute_tool_calls(self, state: LoopState, raw_calls: List[Dict[str, Any]]) -> bool:
         """Validate, dispatch, and append results. Returns False on retry."""
         assistant_msg: Dict[str, Any] = {
             "role": "assistant",
