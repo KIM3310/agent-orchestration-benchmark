@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 from typing import List
 
-from src.config import BenchmarkConfig, RESULTS_DIR
+from src.config import RESULTS_DIR, BenchmarkConfig
 from src.fixtures import load_prompts
 from src.report import write_all_reports
 from src.runner import BenchmarkRunner, write_results
@@ -24,7 +24,6 @@ from src.runners.base import BaseRunner, MockLLM
 from src.runners.crewai_runner import CrewAIRunner
 from src.runners.langgraph_runner import LangGraphRunner
 from src.runners.stage_pilot_style import StagePilotStyleRunner
-
 
 FRAMEWORK_CHOICES = {
     "stage-pilot-style": StagePilotStyleRunner,
