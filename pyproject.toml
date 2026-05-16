@@ -42,7 +42,7 @@ dependencies = [
 langgraph = [
     "langgraph==0.2.55",
     "langchain==0.3.7",
-    "langchain-openai==0.2.8",
+    "langchain-openai==1.1.14",
 ]
 crewai = [
     "crewai==0.86.0",
