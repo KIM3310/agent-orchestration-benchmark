@@ -101,8 +101,7 @@ def _build_in_memory_db() -> sqlite3.Connection:
     """Construct a fresh in-memory SQLite populated with the seed dataset."""
     conn = sqlite3.connect(":memory:")
     conn.row_factory = sqlite3.Row
-    conn.executescript(
-        """
+    conn.executescript("""
         CREATE TABLE sales (
             department TEXT NOT NULL,
             quarter TEXT NOT NULL,
@@ -110,8 +109,7 @@ def _build_in_memory_db() -> sqlite3.Connection:
             revenue_k_usd REAL NOT NULL,
             headcount INTEGER NOT NULL
         );
-        """
-    )
+        """)
     conn.executemany(
         "INSERT INTO sales VALUES (?, ?, ?, ?, ?)",
         _SEED_ROWS,
