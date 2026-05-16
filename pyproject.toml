@@ -41,7 +41,7 @@ dependencies = [
 # needs the base dependencies because the mock LLM is built into this package.
 langgraph = [
     "langgraph==0.2.55",
-    "langchain==0.3.7",
+    "langchain==0.3.30",
     "langchain-openai==0.2.8",
 ]
 crewai = [
