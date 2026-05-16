@@ -40,7 +40,7 @@ dependencies = [
 # Install per-framework extras only when running live benchmarks. CI only
 # needs the base dependencies because the mock LLM is built into this package.
 langgraph = [
-    "langgraph==0.2.55",
+    "langgraph==1.0.10rc1",
     "langchain==0.3.7",
     "langchain-openai==0.2.8",
 ]
