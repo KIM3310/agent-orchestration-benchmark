@@ -10,6 +10,18 @@
 
 ---
 
+## Product and Review Surface
+
+A benchmark suite that lets teams compare orchestration runtimes before they commit to a fragile agent stack.
+
+| Lens | Definition |
+|---|---|
+| Buyer or user | AI platform teams, developer-tool teams, and engineering leaders evaluating agent frameworks. |
+| Commercial route | Offer runtime selection audits, benchmark customization, and CI evaluation packs for internal agent platforms. |
+| Review signal | Standardized fixtures, comparative reports, deterministic runs, and reviewable benchmark outputs. |
+| Safety boundary | Benchmarks are decision support, not universal model rankings; teams should extend fixtures to their real workflows. |
+| Fast proof | Run the benchmark command, review generated reports, and compare framework behavior against the fixture suite. |
+
 ## Why this exists
 
 Teams picking between LangGraph, CrewAI, AutoGen, and home-grown
