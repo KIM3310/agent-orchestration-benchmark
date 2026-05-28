@@ -29,6 +29,10 @@ A benchmark suite that lets teams compare orchestration runtimes before they com
 - **Verification:** Run `make test` and `make lint`; rerender reports with `make report`.
 - **Commercial read:** Sell it as an agent-framework selection audit and CI benchmark pack for AI platform teams.
 
+## Commercialization Playbook
+
+- [Monetization and GTM playbook](docs/monetization-playbook.md) maps the repository to buyer segments, offer ladder, pricing hypotheses, proof gates, and risk boundaries.
+
 ## Why this exists
 
 Teams picking between LangGraph, CrewAI, AutoGen, and home-grown
