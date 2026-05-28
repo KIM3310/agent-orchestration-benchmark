@@ -22,6 +22,13 @@ A benchmark suite that lets teams compare orchestration runtimes before they com
 | Safety boundary | Benchmarks are decision support, not universal model rankings; teams should extend fixtures to their real workflows. |
 | Fast proof | Run the benchmark command, review generated reports, and compare framework behavior against the fixture suite. |
 
+## Reviewer Fast Path
+
+- **First minute:** Compare `results/latest.md` or the sample run before reading runner internals.
+- **Local demo:** Run `make install-dev && make bench`; no model API key is required for the mock run.
+- **Verification:** Run `make test` and `make lint`; rerender reports with `make report`.
+- **Commercial read:** Sell it as an agent-framework selection audit and CI benchmark pack for AI platform teams.
+
 ## Why this exists
 
 Teams picking between LangGraph, CrewAI, AutoGen, and home-grown
