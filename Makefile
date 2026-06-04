@@ -1,4 +1,4 @@
-.PHONY: help install install-dev test lint format bench bench-mock bench-live report clean docker-build docker-bench
+.PHONY: help install install-dev test lint verify format bench bench-mock bench-live report clean docker-build docker-bench
 
 PY := python3
 PIP := $(PY) -m pip
@@ -29,6 +29,8 @@ test:
 
 lint:
 	$(PY) -m ruff check src tests
+
+verify: lint test
 
 format:
 	$(PY) -m black src tests
