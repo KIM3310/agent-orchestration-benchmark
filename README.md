@@ -1,5 +1,10 @@
 # agent-orchestration-benchmark
 
+## Live Demo
+
+- [Open the public GitHub Pages demo](https://kim3310.github.io/agent-orchestration-benchmark/)
+- Scope: credential-free, synthetic-data demo for reviewers and evaluators.
+
 > Standardized benchmark suite comparing LLM agent orchestration frameworks on a shared task. Measures reliability, latency, cost, and deterministic replay — the metrics that matter for production operators.
 
 [![CI](https://github.com/KIM3310/agent-orchestration-benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/KIM3310/agent-orchestration-benchmark/actions/workflows/ci.yml)
