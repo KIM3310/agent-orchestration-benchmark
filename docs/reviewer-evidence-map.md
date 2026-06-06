@@ -48,9 +48,9 @@ Use this page as the short path through the repository. It keeps the review grou
 
 | Possible offer | Working scope assumption |
 |---|---|
-| Framework selection audit | $3k-$8k audit |
-| Custom benchmark pack | $10k-$30k benchmark customization |
-| CI eval integration | $2k-$7k/month eval maintenance |
+| Framework selection audit | Scope after buyer intake |
+| Custom benchmark pack | Scope after buyer intake |
+| CI eval integration | Scope after buyer intake |
 
 ## Boundaries
 

@@ -50,8 +50,8 @@ This note specializes the repository for service launch. It combines product str
 ## Conversion Path
 
 - Free proof: runnable sample, benchmark, or package install.
-- Paid entry: Framework selection audit ($3k-$8k audit) tied to one integration or reliability question.
-- Expansion: Custom benchmark pack ($10k-$30k benchmark customization) and CI eval integration ($2k-$7k/month eval maintenance) after internal adoption starts.
+- Paid entry: Framework selection audit (scope after buyer intake) tied to one integration or reliability question.
+- Expansion: Custom benchmark pack (scope after buyer intake) and CI eval integration (scope after buyer intake) after internal adoption starts.
 
 ## Scope Frame
 

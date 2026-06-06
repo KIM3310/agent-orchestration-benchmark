@@ -12,7 +12,7 @@ This is the buyer-ready version of the repository. It turns the technical proof 
 | Buyer | AI platform leaders choosing LangGraph, CrewAI, AutoGen, or internal orchestration. |
 | Pain wedge | Apples-to-apples benchmark for correctness, cost, latency, and deterministic replay. |
 | Front-door offer | Framework selection audit |
-| Entry scope | $3k-$8k audit |
+| Entry scope | Scope after buyer intake |
 | Proof before pitch | Mock benchmark runs without keys |
 | Next buyer action | Review one proof artifact, then choose diagnostic, workshop, pilot, support, or revival path. |
 
@@ -20,9 +20,9 @@ This is the buyer-ready version of the repository. It turns the technical proof 
 
 | Offer | Scope assumption | Buyer-facing scope |
 |---|---|---|
-| Framework selection audit | $3k-$8k audit | Publish sample report |
-| Custom benchmark pack | $10k-$30k benchmark customization | Build buyer intake form |
-| CI eval integration | $2k-$7k/month eval maintenance | Sell one framework selection sprint |
+| Framework selection audit | Scope after buyer intake | Publish sample report |
+| Custom benchmark pack | Scope after buyer intake | Build buyer intake form |
+| CI eval integration | Scope after buyer intake | Sell one framework selection sprint |
 
 ## Close Path
 
