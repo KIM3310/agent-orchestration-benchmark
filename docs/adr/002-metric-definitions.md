@@ -28,7 +28,7 @@ metrics:
 | `final_answer_quality` | quality | Keyword + regex grade. Conservative by design. |
 | `latency_p50_ms / p95_ms / p99_ms` | cost | Wall-clock per-prompt percentiles. |
 | `tokens_in / tokens_out` | cost | Summed across tool-calling rounds. |
-| `total_cost_usd` | cost | Derived from the pricing table in `src/config.py`. |
+| `total_cost_usd` | cost | Derived from the scope table in `src/config.py`. |
 | `retry_count` | correctness | Counts adapter-initiated retries only. |
 | `exception_rate` | correctness | Fraction of prompts that threw at any depth. |
 | `deterministic_replay_rate` | reproducibility | Fraction of prompts whose fingerprints agree across replays. |

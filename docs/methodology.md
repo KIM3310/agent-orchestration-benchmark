@@ -61,7 +61,7 @@ thing, not frameworks that happen to pass through a generous grader.
 | `tool_call_success_rate` | `correct_sequence_count / n_prompts` | Did the agent call the expected tools in the right order? |
 | `final_answer_quality` | `answer_match_count / n_prompts` | Does the textual answer pass keyword + regex grading? |
 | `latency_p50_ms / p95_ms / p99_ms` | nearest-rank percentile over per-prompt wall time | Operators care about tail latency, not just average. |
-| `tokens_in / tokens_out` | sum of per-call token counts | Cost and throughput upstream of pricing. |
+| `tokens_in / tokens_out` | sum of per-call token counts | Cost and throughput upstream of scope. |
 | `total_cost_usd` | `tokens_in * price_in + tokens_out * price_out` | Concrete dollar number for budget estimation. |
 | `retry_count` | sum of explicit retry increments | Indicates fragility of tool-call parsing. |
 | `exception_rate` | `observations_with_exception / n_prompts` | How often the orchestrator crashes. |
@@ -76,10 +76,10 @@ fingerprints are all identical. A value below 1.0 indicates the framework
 introduced non-determinism even though the LLM, tools, and prompts were all
 seeded.
 
-## Pricing
+## Scope
 
 Costs come from `PRICING_USD_PER_MTOK` in `src/config.py`. Update that table
-when a model's pricing changes. The benchmark never silently assumes a
+when a model's scope changes. The benchmark never silently assumes a
 price; unknown models fall back to the default (`gpt-4o-mini`) and the
 report surfaces the model name so you can spot inconsistencies.
 

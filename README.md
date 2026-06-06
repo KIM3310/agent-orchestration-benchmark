@@ -34,17 +34,17 @@ A benchmark suite that lets teams compare orchestration runtimes before they com
 - **Verification:** Run `make test` and `make lint`; rerender reports with `make report`.
 - **Commercial read:** Sell it as an agent-framework selection audit and CI benchmark pack for AI platform teams.
 
-## Commercialization Playbook
+## Service Launch Playbook
 
-- [Monetization and GTM playbook](docs/monetization-playbook.md) maps the repository to buyer segments, offer ladder, pricing hypotheses, proof gates, and risk boundaries.
+- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to buyer segments, offer ladder, proof gates, proof gates, and risk boundaries.
 
 ## Review Notes
 
 - [Review guide](docs/reviewer-evidence-map.md) summarizes the project angle, first files to inspect, verification commands, and known boundaries.
 - [Quality notes](docs/quality-gate.md) lists the local checks, CI surface, and release expectations for this repository.
-- [Revenue growth model](docs/revenue-growth-model.md) maps the project to an ethical revenue path, activation loop, pricing logic, and growth experiments.
+- [Service growth model](docs/service-growth-model.md) maps the project to an ethical service path, activation loop, scope logic, and growth experiments.
 - [Enterprise readiness notes](docs/enterprise-readiness.md) outlines security, data, operations, integration, and handoff expectations.
-- [Conversion UX model](docs/conversion-ux-model.md) maps the buyer path, behavioral design, UI/UX direction, pricing frame, and ethical conversion guardrails.
+- [Conversion UX model](docs/conversion-ux-model.md) maps the buyer path, behavioral design, UI/UX direction, scope frame, and ethical conversion guardrails.
 - [Commercial offer](docs/commercial-offer.md) packages the repository into a buyer-ready offer ladder, proof gate, outreach angle, and close path.
 
 ## Why this exists
@@ -158,8 +158,8 @@ deterministic; live mode is available for real-API comparisons.
 | `tool_call_success_rate` | Fraction of prompts whose observed tool sequence exactly matches the expected one. | If the agent calls the wrong tool or skips a tool, nothing else matters. |
 | `final_answer_quality` | Fraction of final answers passing keyword + regex grading. | Proxy for user-visible correctness. |
 | `latency_p50_ms / p95_ms / p99_ms` | Nearest-rank percentiles over per-prompt wall time. | Tail latency is what breaks SLOs. |
-| `tokens_in / tokens_out` | Sum across all tool-calling rounds. | Upstream cost signal; independent of pricing. |
-| `total_cost_usd` | Derived from the pricing table in `src/config.py`. | A concrete dollar number for budget pitches. |
+| `tokens_in / tokens_out` | Sum across all tool-calling rounds. | Upstream cost signal; independent of scope. |
+| `total_cost_usd` | Derived from the scope table in `src/config.py`. | A concrete dollar number for budget pitches. |
 | `retry_count` | Adapter-initiated retries across all prompts. | Fragility of the tool-call parser. |
 | `exception_rate` | Fraction of prompts that raised. | Operators feel this as pages. |
 | `deterministic_replay_rate` | Fraction of prompts whose replay fingerprints collapse to a single value. | Whether the orchestrator is reproducible under fixed input. |
@@ -254,7 +254,7 @@ Key invariants the benchmark enforces:
    strategy in CI.
 4. **Bounded loops.** Every adapter caps its own loop count so a runaway
    orchestrator cannot distort aggregate metrics.
-5. **Single source of truth for pricing.** `PRICING_USD_PER_MTOK` in
+5. **Single source of truth for scope.** `PRICING_USD_PER_MTOK` in
    `src/config.py` is the only place that translates tokens to dollars.
 
 Related reading:
@@ -284,7 +284,7 @@ agent-orchestration-benchmark/
 │       └── ci.yml
 ├── src/
 │   ├── __init__.py
-│   ├── config.py              # models, pricing, retry budgets, timeouts
+│   ├── config.py              # models, scope, retry budgets, timeouts
 │   ├── task.py                # standardized task + deterministic tools
 │   ├── fixtures.py            # prompt loader + grading contract
 │   ├── metrics.py             # metric primitives + aggregation
@@ -425,7 +425,7 @@ clear all four lanes.
 This benchmark builds on the tool-calling reliability research behind
 [stage-pilot](https://github.com/KIM3310/stage-pilot) and the
 orchestration patterns used in [Nexus-Hive](https://github.com/KIM3310/Nexus-Hive).
-Pricing figures are derived from each model provider's published
+Scope figures are derived from each model provider's published
 rates as of April 2026 and tracked in `src/config.py`.
 
 ## License
@@ -442,4 +442,8 @@ This repository includes a neutral cloud and AI engineering blueprint that maps 
 
 ## Enterprise Productization
 
-- [Product operating model](docs/product-operating-model.md) defines the buyer, paid wedge, trust boundary, operating checks, and revenue path for this repository.
+- [Product operating model](docs/product-operating-model.md) defines the buyer, paid wedge, trust boundary, operating checks, and service path for this repository.
+
+## Service Architecture
+
+- [Service architecture](docs/service-architecture.md) defines the cloud resources, account information, cost controls, and production guardrails needed to turn this repo into a scoped service without publishing public financial assumptions.
