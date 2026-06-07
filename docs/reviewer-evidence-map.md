@@ -44,13 +44,13 @@ Use this page as the short path through the repository. It keeps the review grou
 - Reports render reproducibly
 - CI passes
 
-## Commercial Notes
+## Review Notes
 
 | Possible offer | Working scope assumption |
 |---|---|
-| Framework selection audit | Scope after buyer intake |
-| Custom benchmark pack | Scope after buyer intake |
-| CI eval integration | Scope after buyer intake |
+| Framework selection audit | Scope after reviewer intake |
+| Custom benchmark pack | Scope after reviewer intake |
+| CI eval integration | Scope after reviewer intake |
 
 ## Boundaries
 

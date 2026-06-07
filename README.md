@@ -21,8 +21,8 @@ A benchmark suite that lets teams compare orchestration runtimes before they com
 
 | Lens | Definition |
 |---|---|
-| Buyer or user | AI platform teams, developer-tool teams, and engineering leaders evaluating agent frameworks. |
-| Commercial route | Offer runtime selection audits, benchmark customization, and CI evaluation packs for internal agent platforms. |
+| Audience | AI platform teams, developer-tool teams, and engineering leaders evaluating agent frameworks. |
+| Review path | Validate the demo, README, architecture notes, and quality gate before deeper workflow review. |
 | Review signal | Standardized fixtures, comparative reports, deterministic runs, and reviewable benchmark outputs. |
 | Safety boundary | Benchmarks are decision support, not universal model rankings; teams should extend fixtures to their real workflows. |
 | Fast proof | Run the benchmark command, review generated reports, and compare framework behavior against the fixture suite. |
@@ -32,20 +32,16 @@ A benchmark suite that lets teams compare orchestration runtimes before they com
 - **First minute:** Compare `results/latest.md` or the sample run before reading runner internals.
 - **Local demo:** Run `make install-dev && make bench`; no model API key is required for the mock run.
 - **Verification:** Run `make test` and `make lint`; rerender reports with `make report`.
-- **Commercial read:** Sell it as an agent-framework selection audit and CI benchmark pack for AI platform teams.
 
 ## Service Launch Playbook
 
-- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to buyer segments, offer ladder, proof gates, proof gates, and risk boundaries.
+- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to review audiences, offer ladder, proof gates, proof gates, and risk boundaries.
 
 ## Review Notes
 
 - [Review guide](docs/reviewer-evidence-map.md) summarizes the project angle, first files to inspect, verification commands, and known boundaries.
 - [Quality notes](docs/quality-gate.md) lists the local checks, CI surface, and release expectations for this repository.
-- [Service growth model](docs/service-growth-model.md) maps the project to an ethical service path, activation loop, scope logic, and growth experiments.
 - [Enterprise readiness notes](docs/enterprise-readiness.md) outlines security, data, operations, integration, and handoff expectations.
-- [Conversion UX model](docs/conversion-ux-model.md) maps the buyer path, behavioral design, UI/UX direction, scope frame, and ethical conversion guardrails.
-- [Commercial offer](docs/commercial-offer.md) packages the repository into a buyer-ready offer ladder, proof gate, outreach angle, and close path.
 
 ## Why this exists
 
@@ -442,7 +438,7 @@ This repository includes a neutral cloud and AI engineering blueprint that maps 
 
 ## Enterprise Productization
 
-- [Product operating model](docs/product-operating-model.md) defines the buyer, paid wedge, trust boundary, operating checks, and service path for this repository.
+- [Product operating model](docs/product-operating-model.md) defines the reviewer, trust boundary, trust boundary, operating checks, and service path for this repository.
 
 ## Service Architecture
 
