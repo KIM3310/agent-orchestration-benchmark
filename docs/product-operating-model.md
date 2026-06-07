@@ -19,7 +19,7 @@ This repository is packaged as a concrete system surface, not a loose code sampl
 | Area | Position |
 | --- | --- |
 | Target reviewer | AI platform, automation, and governance teams |
-| Service wedge | pilot-to-subscription AI operations kit or implementation package |
+| Service wedge | pilot-to-operations AI implementation package |
 | Review signal | architecture clarity, local verification, trust boundaries, and repeatable operator workflow |
 | Delivery shape | Fixed-scope pilot, integration sprint, and handoff-ready operating pack |
 | Expansion path | Add customer-specific adapters, policy controls, observability, and support SLAs after the pilot proves value |
