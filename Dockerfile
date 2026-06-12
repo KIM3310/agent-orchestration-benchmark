@@ -1,5 +1,5 @@
 # ---------- build stage ----------
-FROM python:3.11-slim AS build
+FROM python:3.14-slim AS build
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -13,7 +13,7 @@ RUN python -m pip install --upgrade pip \
  && pip install --prefix=/install -r requirements.txt
 
 # ---------- runtime stage ----------
-FROM python:3.11-slim AS runtime
+FROM python:3.14-slim AS runtime
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
