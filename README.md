@@ -3,7 +3,7 @@
 ## Live Demo
 
 - [Open the public GitHub Pages demo](https://kim3310.github.io/agent-orchestration-benchmark/)
-- Scope: credential-free, synthetic-data demo for reviewers and evaluators.
+- Scope: credential-free, synthetic-data demo for technical readers and evaluators.
 
 > Standardized benchmark suite comparing LLM agent orchestration frameworks on a shared task. Measures reliability, latency, cost, and deterministic replay — the metrics that matter for production operators.
 
@@ -15,19 +15,19 @@
 
 ---
 
-## Product and Review Surface
+## Product and System Surface
 
 A benchmark suite that lets teams compare orchestration runtimes before they commit to a fragile agent stack.
 
 | Lens | Definition |
 |---|---|
 | Audience | AI platform teams, developer-tool teams, and engineering leaders evaluating agent frameworks. |
-| Review path | Validate the demo, README, architecture notes, and quality gate before deeper workflow review. |
-| Architecture signal | Standardized fixtures, comparative reports, deterministic runs, and reviewable benchmark outputs. |
+| Architecture path | Validate the demo, README, architecture notes, and quality gate before deeper workflow architecture. |
+| System signal | Standardized fixtures, comparative reports, deterministic runs, and inspectable benchmark outputs. |
 | Safety boundary | Benchmarks are decision support, not universal model rankings; teams should extend fixtures to their real workflows. |
-| Fast proof | Run the benchmark command, review generated reports, and compare framework behavior against the fixture suite. |
+| Fast path | Run the benchmark command, architecture generated reports, and compare framework behavior against the fixture suite. |
 
-## Reviewer Fast Path
+## System Fast Path
 
 - **First minute:** Compare `results/latest.md` or the sample run before reading runner internals.
 - **Local demo:** Run `make install-dev && make bench`; no model API key is required for the mock run.
@@ -35,11 +35,11 @@ A benchmark suite that lets teams compare orchestration runtimes before they com
 
 ## Service Launch Playbook
 
-- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to review audiences, proof gates, operating boundaries, and risk controls.
+- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to architecture audiences, operating gates, operating boundaries, and risk controls.
 
-## Review Notes
+## Architecture Notes
 
-- [Review guide](docs/reviewer-evidence-map.md) summarizes the project angle, first files to inspect, verification commands, and known boundaries.
+- [Architecture guide](docs/architecture-evidence-map.md) summarizes the project angle, first files to inspect, runtime commands, and known boundaries.
 - [Quality notes](docs/quality-gate.md) lists the local checks, CI surface, and release expectations for this repository.
 - [Enterprise readiness notes](docs/enterprise-readiness.md) outlines security, data, operations, integration, and handoff expectations.
 
@@ -438,7 +438,7 @@ This repository includes a neutral cloud and AI engineering blueprint that maps 
 
 ## Enterprise Productization
 
-- [Product operating model](docs/product-operating-model.md) defines the reviewer, trust boundary, trust boundary, operating checks, and service path for this repository.
+- [Product operating model](docs/product-operating-model.md) defines the technical reader, trust boundary, trust boundary, operating checks, and service path for this repository.
 
 ## System Architecture
 
