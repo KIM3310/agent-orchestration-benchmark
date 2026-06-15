@@ -23,7 +23,7 @@ A benchmark suite that lets teams compare orchestration runtimes before they com
 |---|---|
 | Audience | AI platform teams, developer-tool teams, and engineering leaders evaluating agent frameworks. |
 | Review path | Validate the demo, README, architecture notes, and quality gate before deeper workflow review. |
-| Review signal | Standardized fixtures, comparative reports, deterministic runs, and reviewable benchmark outputs. |
+| Architecture signal | Standardized fixtures, comparative reports, deterministic runs, and reviewable benchmark outputs. |
 | Safety boundary | Benchmarks are decision support, not universal model rankings; teams should extend fixtures to their real workflows. |
 | Fast proof | Run the benchmark command, review generated reports, and compare framework behavior against the fixture suite. |
 
@@ -439,6 +439,10 @@ This repository includes a neutral cloud and AI engineering blueprint that maps 
 ## Enterprise Productization
 
 - [Product operating model](docs/product-operating-model.md) defines the reviewer, trust boundary, trust boundary, operating checks, and service path for this repository.
+
+## System Architecture
+
+- [System architecture](docs/system-architecture.md) maps the runtime boundary, data/control flow, cloud or local deployment surface, and operating assumptions for this repository.
 
 ## Service Architecture
 
