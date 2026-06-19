@@ -7,6 +7,6 @@ Canonical URL: https://kim3310.github.io/agent-orchestration-benchmark/
 Repository: https://github.com/KIM3310/agent-orchestration-benchmark
 System architecture: https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/system-architecture.md
 Revenue architecture: https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/revenue-architecture.md
-Lead capture: mailto:ehdjs1351@gmail.com?subject=Agent%20Orchestration%20Benchmark%20private%20workspace&body=I%20am%20interested%20in%20paid%20benchmark%20report%20pack%2C%20private%20scenario%20suite%2C%20and%20recurring%20provider%20regression%20dashboard%20for%20Agent%20Orchestration%20Benchmark.
+Lead capture: https://github.com/KIM3310/agent-orchestration-benchmark/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+Agent+Orchestration+Benchmark
 
 Use this project as a runnable or inspectable reference for Agent Orchestration Benchmark demo, Agent Orchestration Benchmark system architecture, Agent Orchestration Benchmark developer tool, benchmark harness and report generator for agent orchestration reliability service.
