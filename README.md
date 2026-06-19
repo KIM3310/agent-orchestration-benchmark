@@ -447,3 +447,17 @@ This repository includes a neutral cloud and AI engineering blueprint that maps 
 ## Service Architecture
 
 - [Service architecture](docs/service-architecture.md) defines the cloud resources, account information, cost controls, and production guardrails needed to turn this repo into a scoped service without publishing public financial assumptions.
+
+<!-- search-growth-readme:start -->
+
+## Search And Service Surface
+
+- Public entry: free benchmark methodology and sample leaderboard
+- Paid boundary: paid benchmark report pack, private scenario suite, and recurring provider regression dashboard
+- Canonical URL: https://kim3310.github.io/agent-orchestration-benchmark/
+- Lead capture: mailto:ehdjs1351@gmail.com?subject=Agent%20Orchestration%20Benchmark%20private%20workspace&body=I%20am%20interested%20in%20paid%20benchmark%20report%20pack%2C%20private%20scenario%20suite%2C%20and%20recurring%20provider%20regression%20dashboard%20for%20Agent%20Orchestration%20Benchmark.
+- Machine-readable offer: [docs/service-offer.json](docs/service-offer.json)
+- Search growth implementation: [docs/search-growth-implementation.md](docs/search-growth-implementation.md)
+- Revenue architecture: [docs/revenue-architecture.md](docs/revenue-architecture.md)
+
+<!-- search-growth-readme:end -->
