@@ -74,6 +74,9 @@ git clone https://github.com/KIM3310/agent-orchestration-benchmark.git
 cd agent-orchestration-benchmark
 make install-dev
 make bench          # mock-LLM run, no API key required
+
+# If your default python3 is older than 3.11:
+make BOOTSTRAP_PYTHON=/path/to/python3.11 install-dev
 ```
 
 Results land under `results/`:
