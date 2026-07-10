@@ -3,7 +3,7 @@
 ## Live Demo
 
 - [Open the public GitHub Pages demo](https://kim3310.github.io/agent-orchestration-benchmark/)
-- Scope: credential-free, synthetic-data demo for architecture inspection paths and evaluators.
+- Scope: credential-free, synthetic-data demo for AI platform teams and technical evaluators.
 
 > Standardized benchmark suite comparing LLM agent orchestration frameworks on a shared task. Measures reliability, latency, cost, and deterministic replay — the metrics that matter for production operators.
 
@@ -15,31 +15,31 @@
 
 ---
 
-## Product and System Surface
+## System Overview
 
 A benchmark suite that lets teams compare orchestration runtimes before they commit to a fragile agent stack.
 
-| Lens | Definition |
+| Area | Details |
 |---|---|
-| Audience | AI platform teams, developer-tool teams, and engineering leaders evaluating agent frameworks. |
-| Architecture path | Validate the demo, README, architecture notes, and quality gate before deeper workflow architecture. |
-| System signal | Standardized fixtures, comparative reports, deterministic runs, and inspectable benchmark outputs. |
-| Safety boundary | Benchmarks are decision support, not universal model rankings; teams should extend fixtures to their real workflows. |
-| Fast path | Run the benchmark command, architecture generated reports, and compare framework behavior against the fixture suite. |
+| Users | AI platform teams, developer-tool teams, and engineering leaders evaluating agent frameworks. |
+| Technical path | Validate the demo, README, architecture notes, and quality gate before deeper workflow review. |
+| System scope | Standardized fixtures, comparative reports, deterministic runs, and inspectable benchmark outputs. |
+| Operating boundary | Benchmarks are decision support, not universal model rankings; teams should extend fixtures to their real workflows. |
+| Evaluation path | Run the benchmark command, review generated reports, and compare framework behavior against the fixture suite. |
 
-## System Fast Path
+## Evaluation Path
 
-- **First minute:** Compare `results/latest.md` or the sample run before reading runner internals.
+- **Start here:** Compare `results/latest.md` or the sample run before reading runner internals.
 - **Local demo:** Run `make install-dev && make bench`; no model API key is required for the mock run.
-- **Verification:** Run `make test` and `make lint`; rerender reports with `make report`.
+- **Checks:** Run `make test` and `make lint`; rerender reports with `make report`.
 
 ## Service Launch Playbook
 
-- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to architecture audiences, operating gates, operating boundaries, and risk controls.
+- [Service launch playbook](docs/service-launch-playbook.md) maps the repository to its product scope, operating gates, operating boundaries, and risk controls.
 
 ## Architecture Notes
 
-- [Architecture guide](docs/architecture-evidence-map.md) summarizes the project angle, first files to inspect, runtime commands, and known boundaries.
+- [Architecture guide](docs/architecture-evidence-map.md) summarizes the system scope, first files to inspect, runtime commands, and known boundaries.
 - [Quality notes](docs/quality-gate.md) lists the local checks, CI surface, and release expectations for this repository.
 - [Enterprise readiness notes](docs/enterprise-readiness.md) outlines security, data, operations, integration, and handoff expectations.
 
@@ -433,15 +433,13 @@ MIT. See [LICENSE](LICENSE). Copyright (c) 2026 Doeon Kim.
 
 ## Cloud + AI Architecture
 
-This repository includes a neutral cloud and AI engineering blueprint that maps the current proof surface to runtime boundaries, data contracts, model-risk controls, deployment posture, and validation hooks.
-
 - [Cloud + AI architecture blueprint](docs/cloud-ai-architecture.md)
 - [Machine-readable architecture manifest](docs/architecture/blueprint.json)
 - Validation command: `python3 scripts/validate_architecture_blueprint.py`
 
 ## Enterprise Productization
 
-- [Product operating model](docs/product-operating-model.md) defines the architecture inspection, trust boundary, trust boundary, operating checks, and service path for this repository.
+- [Product operating model](docs/product-operating-model.md) defines the product scope, trust boundary, operating checks, and service path for this repository.
 
 ## System Architecture
 

@@ -1,7 +1,7 @@
 .PHONY: help install install-dev test lint verify format bench bench-mock bench-live report clean docker-build docker-bench
 
 PYTHON_MIN_VERSION := 3.11
-PYTHON_CANDIDATES := python3.13 python3.12 python3.11 python3
+PYTHON_CANDIDATES = $(VENV)/bin/python python3.13 python3.12 python3.11 python3
 BOOTSTRAP_PYTHON ?= $(shell for py in $(PYTHON_CANDIDATES); do \
 	if command -v $$py >/dev/null 2>&1 && $$py -c 'import sys; raise SystemExit(0 if sys.version_info >= (3, 11) else 1)' >/dev/null 2>&1; then \
 		command -v $$py; \
