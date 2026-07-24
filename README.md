@@ -136,7 +136,7 @@ new adapter automatically inherits the full output pipeline.
 
 | Framework | Version | Paradigm | Notes |
 |---|---|---|---|
-| [LangGraph](https://langchain-ai.github.io/langgraph/) | `0.2.55` | Stateful graph | Nodes + conditional edges. |
+| [LangGraph](https://langchain-ai.github.io/langgraph/) | `1.2.4` | Stateful graph | Nodes + conditional edges. |
 | [CrewAI](https://docs.crewai.com/) | `0.86.0` | Role-based crew | Agents with role/goal/backstory. |
 | [AutoGen](https://microsoft.github.io/autogen/) | `0.4.0` | Conversational | Assistant + user proxy dialogue loop. |
 | **stage-pilot-style** (this repo) | — | Deterministic tool-calling parser | ~200 LOC baseline modelled on [stage-pilot](https://github.com/KIM3310/stage-pilot). |
