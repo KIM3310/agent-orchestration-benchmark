@@ -69,5 +69,29 @@
     ],
     "isAccessibleForFree": true,
     "keywords": "agent-orchestration-benchmark, Agent, Orchestration, Benchmark, benchmark, harness, generator, agent, orchestration, reliability, pack, scenario, suite, recurring, provider, regression, dashboard, methodology, sample, leaderboard, tier, Cloudflare"
+  },
+  "commerce": {
+    "gateway_url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark#service-offers",
+    "lane_id": "stagepilot-reliability-lab",
+    "lane_name": "StagePilot Reliability Lab",
+    "billing_mode": "one-time",
+    "price_unit": "reliability report pack from USD 500",
+    "fulfillment_kind": "private scenario suite, trace review, retry and parser findings, and provider scorecard",
+    "risk_bucket": "standard-b2b",
+    "checkout": {
+      "provider": "lemon-squeezy",
+      "status": "account-onboarding-required",
+      "fallback_url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark#service-offers"
+    },
+    "sponsorship": {
+      "provider": "github-sponsors",
+      "eligible": true,
+      "status": "account-onboarding-required"
+    },
+    "advertising": {
+      "provider": null,
+      "eligible": false,
+      "status": "not-applicable"
+    }
   }
 }

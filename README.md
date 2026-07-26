@@ -457,6 +457,7 @@ MIT. See [LICENSE](LICENSE). Copyright (c) 2026 Doeon Kim.
 - Paid boundary: paid benchmark report pack, private scenario suite, and recurring provider regression dashboard
 - Canonical URL: https://kim3310.github.io/agent-orchestration-benchmark/
 - Lead capture: https://github.com/KIM3310/agent-orchestration-benchmark/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+Agent+Orchestration+Benchmark
+- Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark#service-offers
 - Machine-readable offer: [docs/service-offer.json](docs/service-offer.json)
 - Search growth implementation: [docs/search-growth-implementation.md](docs/search-growth-implementation.md)
 - Revenue architecture: [docs/revenue-architecture.md](docs/revenue-architecture.md)
