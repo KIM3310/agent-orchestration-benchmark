@@ -11,10 +11,11 @@ After a run you will find the following under `results/`:
 |---|---|---|
 | `<stem>.json` | JSON | Machine-readable results including per-prompt observations. |
 | `<stem>.md`   | Markdown | Human-readable tables, safe to paste into a PR. |
-| `<stem>.html` | HTML | Standalone report for sharing via static hosting. |
+| `<stem>.html` | HTML | Standalone report with prompt contracts and expandable tool-call evidence. |
 
-Every report shares the same schema. A stable `prompt_id` column lets you
-diff two runs with standard shell tools.
+Every report derives from the same result artifact. A stable `prompt_id`
+plus the embedded prompt contract lets you audit or diff a run even if the
+fixture later changes.
 
 ## Framework summary table
 
@@ -45,9 +46,11 @@ latency, and token usage. Use this when a summary number looks suspicious:
 
 ## Common pitfalls
 
-* **Mock mode misread.** Numbers produced with `use_mock_llm=True` measure
-  the orchestrator shape, not the upstream model. Always label your report
-  with `config.use_mock_llm` when sharing.
+* **Mock mode misread.** Numbers labeled `MOCK / SYNTHETIC` measure the
+  orchestrator shape, not the upstream model.
+* **Configured live mode overclaim.** `LIVE / CONFIGURED` means the live path
+  was requested. It is provider-verified only after adapter exceptions, token
+  counters, and provider-side logs confirm actual traffic.
 * **Ignoring replay rate.** A framework can post a high tool-call success
   rate while being non-deterministic. Both matter; neither substitutes for
   the other.

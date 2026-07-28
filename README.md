@@ -85,7 +85,7 @@ Results land under `results/`:
 results/
   latest.json        # machine-readable
   latest.md          # human-readable markdown
-  latest.html        # standalone HTML report
+  latest.html        # standalone HTML report with prompt and tool-call evidence
 ```
 
 To re-render reports without re-executing the benchmark:
@@ -94,12 +94,17 @@ To re-render reports without re-executing the benchmark:
 python -m scripts.run_bench --report-only --input results/latest.json
 ```
 
-For a live benchmark against real LLM APIs:
+To request each framework adapter's live path:
 
 ```bash
 export OPENAI_API_KEY=sk-...
 make bench-live
 ```
+
+The generated report labels this mode `LIVE / CONFIGURED`. That label records
+the requested adapter path; it does not by itself prove provider traffic.
+Provider credentials and integration depth differ by adapter, so confirm
+exceptions, token counters, and provider-side logs before making comparisons.
 
 A working sample run is checked in at
 [`results/sample_run_2026-04-16.json`](results/sample_run_2026-04-16.json).
@@ -146,7 +151,8 @@ It exists so the report answers the operator's real question: "is the
 framework giving me net value over a well-designed script?"
 
 All adapters default to a built-in mock LLM so CI runs are free and
-deterministic; live mode is available for real-API comparisons.
+deterministic. Live mode requests each adapter's integration path and must be
+validated against that adapter's provider prerequisites.
 
 ---
 
@@ -199,10 +205,8 @@ better for everything else.
   predictable than CrewAI's role negotiation but less economical than a
   single-assistant loop.
 
-Numbers are mock-LLM to keep the comparison reproducible. A live run with
-`gpt-4o-mini` tends to widen CrewAI's and AutoGen's cost disadvantage,
-because their patterns emit more completion tokens; the orderings are
-stable.
+Numbers are mock-LLM to keep the comparison reproducible. Do not extrapolate
+their ranking to live providers without a separately verified live run.
 
 ### Per-framework deltas at a glance
 
@@ -235,10 +239,11 @@ shortest existing example.
 ## Methodology
 
 The benchmark isolates orchestrator behaviour by holding prompts, tools,
-grading, and LLM backend constant. All LLM calls run against a seeded
-mock in CI; live mode targets `gpt-4o-mini` by default. Every run records
-per-prompt observations alongside the framework summary so the aggregate
-can always be audited at the individual-call level. Full write-up:
+grading, and the mock backend constant in CI. Live mode requests
+adapter-specific integration paths, whose provider setup can differ. Every
+run freezes its prompt contracts and records per-prompt observations alongside
+the framework summary so the aggregate can be audited at the individual-call
+level. Full write-up:
 [`docs/methodology.md`](docs/methodology.md).
 
 Key invariants the benchmark enforces:
@@ -331,7 +336,7 @@ agent-orchestration-benchmark/
 | `make lint` | Ruff over `src/` and `tests/`. |
 | `make format` | Black + ruff `--fix`. |
 | `make bench` | Full mock-LLM benchmark. |
-| `make bench-live` | Full benchmark against real LLM APIs (requires `OPENAI_API_KEY`). |
+| `make bench-live` | Request adapter-specific live paths; verify each provider prerequisite and log. |
 | `make report` | Re-render the latest results as Markdown + HTML. |
 | `make docker-build` | Build the Docker image. |
 | `make docker-bench` | Run the benchmark inside Docker with a mounted results volume. |
@@ -345,9 +350,9 @@ This benchmark complements several other tools published under
 [@KIM3310](https://github.com/KIM3310):
 
 * **[stage-pilot](https://github.com/KIM3310/stage-pilot)** — tool-calling
-  reliability runtime (published as `@ai-sdk-tool/parser` on npm). The
-  `stage_pilot_style` runner here is the Python-port distillation of its
-  deterministic parser loop.
+  reliability runtime built around an attributed Apache-2.0 upstream parser
+  compatibility surface. The `stage_pilot_style` runner here is a Python
+  distillation of its deterministic parser loop.
 * **[Nexus-Hive](https://github.com/KIM3310/Nexus-Hive)** — multi-agent
   NL-to-SQL copilot. The analytics flavour of the benchmark task mirrors
   what Nexus-Hive agents do in production.
@@ -456,7 +461,7 @@ MIT. See [LICENSE](LICENSE). Copyright (c) 2026 Doeon Kim.
 - Public entry: free benchmark methodology and sample leaderboard
 - Paid boundary: paid benchmark report pack, private scenario suite, and recurring provider regression dashboard
 - Canonical URL: https://kim3310.github.io/agent-orchestration-benchmark/
-- Lead capture: https://github.com/KIM3310/agent-orchestration-benchmark/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+Agent+Orchestration+Benchmark
+- Lead capture: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark&inquiry=agent-reliability-audit#private-inquiry
 - Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark#service-offers
 - Machine-readable offer: [docs/service-offer.json](docs/service-offer.json)
 - Search growth implementation: [docs/search-growth-implementation.md](docs/search-growth-implementation.md)

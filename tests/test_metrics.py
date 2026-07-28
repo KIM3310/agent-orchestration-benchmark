@@ -53,7 +53,7 @@ def test_tool_call_success_fails_on_extra_call():
     assert tool_call_success(obs, _prompt()) is False
 
 
-def test_tool_call_success_ignores_failed_calls_when_counting():
+def test_tool_call_success_counts_failed_extra_calls_when_matching():
     obs = PromptObservation(
         prompt_id="p-x",
         framework="t",
@@ -64,7 +64,20 @@ def test_tool_call_success_ignores_failed_calls_when_counting():
             ToolCallRecord("summarize_trend", {}, True, ""),
         ],
     )
-    assert tool_call_success(obs, _prompt()) is True
+    assert tool_call_success(obs, _prompt()) is False
+
+
+def test_tool_call_success_fails_when_expected_call_failed():
+    obs = PromptObservation(
+        prompt_id="p-x",
+        framework="t",
+        final_answer="",
+        tool_calls=[
+            ToolCallRecord("query_sales_data", {}, True, ""),
+            ToolCallRecord("summarize_trend", {}, False, "", error="bad args"),
+        ],
+    )
+    assert tool_call_success(obs, _prompt()) is False
 
 
 def test_answer_quality_checks_keywords():

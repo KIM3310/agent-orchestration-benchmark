@@ -157,9 +157,10 @@ def _synthesize_sql(user_text: str) -> str:
 
     where = f" WHERE {' AND '.join(where_parts)}" if where_parts else ""
     limit = 10 if "top" not in lowered else 3
+    # Bandit B608 rationale: mock SQL uses fixed fragments plus regex quarter/internal int year/limit.
     return (
         "SELECT department, quarter, year, revenue_k_usd, headcount "
-        f"FROM sales{where} ORDER BY revenue_k_usd DESC LIMIT {limit}"
+        f"FROM sales{where} ORDER BY revenue_k_usd DESC LIMIT {limit}"  # nosec B608
     )
 
 
@@ -209,7 +210,7 @@ class BaseRunner(ABC):
     ) -> None:
         self.config = config or BenchmarkConfig()
         self.llm = llm or MockLLM(seed=self.config.seed)
-        self._rng = random.Random(self.config.seed)
+        self._rng = random.Random(self.config.seed)  # nosec B311
 
     # -- public API --------------------------------------------------------
     @abstractmethod

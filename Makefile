@@ -22,7 +22,7 @@ help:
 	@echo "  format        Run black and ruff --fix"
 	@echo "  bench         Run the full benchmark (uses mock LLM by default)"
 	@echo "  bench-mock    Explicit alias for bench against the mock LLM"
-	@echo "  bench-live    Run the benchmark against real LLM APIs"
+	@echo "  bench-live    Request adapter-specific live paths"
 	@echo "  report        Re-render reports from the newest results file"
 	@echo "  clean         Remove build artifacts and __pycache__"
 	@echo "  docker-build  Build the Docker image"

@@ -87,8 +87,17 @@ report surfaces the model name so you can spot inconsistencies.
 
 `use_mock_llm=True` (CI default) uses a built-in deterministic mock. Its
 purpose is to exercise orchestration shape; it is not a replacement for a
-real LLM. When you need to compare frameworks on real model behaviour, run
-`make bench-live` with `OPENAI_API_KEY` in the environment.
+real LLM. `make bench-live` requests each adapter's live integration path,
+but adapter prerequisites and provider wiring are not uniform. The report
+therefore labels that run `LIVE / CONFIGURED`, not provider-verified. Confirm
+exceptions, token counters, and provider-side logs before treating it as a
+real-model comparison.
+
+Every new result embeds `execution_mode`, `execution_mode_source`, and the
+complete prompt grading contracts. The HTML report joins those contracts to
+each observation so the expected sequence, successful observed sequence,
+arguments, result/error evidence, final answer, and replay fingerprints remain
+auditable without consulting a later fixture revision.
 
 ## Reproducing a run
 

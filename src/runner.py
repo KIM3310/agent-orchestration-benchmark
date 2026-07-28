@@ -60,6 +60,8 @@ class BenchmarkRunner:
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "model": self.config.model,
             "n_prompts": len(self.prompts),
+            "execution_mode": "mock" if self.config.use_mock_llm else "live",
+            "execution_mode_source": "config.use_mock_llm",
             "config": {
                 "seed": self.config.seed,
                 "temperature": self.config.temperature,
@@ -67,6 +69,7 @@ class BenchmarkRunner:
                 "replay_trials": self.config.replay_trials,
                 "use_mock_llm": self.config.use_mock_llm,
             },
+            "prompt_contracts": [_prompt_to_contract(prompt) for prompt in self.prompts],
             "summaries": [s.as_row() for s in summaries],
             "observations": {
                 fw: [_obs_to_dict(o) for o in obs] for fw, obs in per_framework_observations.items()
@@ -121,6 +124,18 @@ class BenchmarkRunner:
 def _fingerprint(tool_calls) -> str:
     """Join the per-call fingerprints into a single string for comparison."""
     return "|".join(c.fingerprint() for c in tool_calls)
+
+
+def _prompt_to_contract(prompt: Prompt) -> Dict[str, object]:
+    """Freeze the grading contract into the run artifact for reproducibility."""
+    return {
+        "prompt_id": prompt.prompt_id,
+        "user_message": prompt.user_message,
+        "expected_tool_sequence": list(prompt.expected_tool_sequence),
+        "answer_keywords": list(prompt.answer_keywords),
+        "answer_regex": prompt.answer_regex,
+        "difficulty": prompt.difficulty,
+    }
 
 
 def _obs_to_dict(obs: PromptObservation) -> Dict[str, object]:

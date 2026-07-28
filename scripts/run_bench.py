@@ -2,7 +2,7 @@
 
 Run the benchmark across any subset of framework runners and emit JSON /
 Markdown / HTML reports. Designed to work both in CI (mock LLM) and against
-real LLM APIs (``--use-live``).
+adapter-specific live paths (``--use-live``).
 """
 
 from __future__ import annotations
@@ -38,11 +38,14 @@ def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
     ap.add_argument(
         "--frameworks",
         default="all",
-        help="Comma-separated framework names or 'all'. Choices: "
-        + ", ".join(FRAMEWORK_CHOICES),
+        help="Comma-separated framework names or 'all'. Choices: " + ", ".join(FRAMEWORK_CHOICES),
     )
     ap.add_argument("--output", default=str(RESULTS_DIR / "latest.json"))
-    ap.add_argument("--use-live", action="store_true", help="Use real LLM APIs instead of mock.")
+    ap.add_argument(
+        "--use-live",
+        action="store_true",
+        help="Request each adapter's live path instead of the deterministic mock.",
+    )
     ap.add_argument("--model", default=None)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--replay-trials", type=int, default=None)
@@ -94,7 +97,8 @@ def main(argv: List[str] | None = None) -> int:
     llm = MockLLM(seed=config.seed)
 
     runners: List[BaseRunner] = [
-        FRAMEWORK_CHOICES[name](config=config, llm=llm) for name in _runner_selection(args.frameworks)
+        FRAMEWORK_CHOICES[name](config=config, llm=llm)
+        for name in _runner_selection(args.frameworks)
     ]
 
     prompts = load_prompts()

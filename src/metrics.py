@@ -48,12 +48,12 @@ class PromptObservation:
 def tool_call_success(obs: PromptObservation, prompt: Prompt) -> bool:
     """Return True iff the observed tool sequence matches the expected one.
 
-    The comparison is strict in ordering and tool name. Missing or extra tools
-    count as a failure, which keeps the metric honest for frameworks that
-    cheerfully over-call.
+    The comparison is strict in ordering, tool name, and tool outcome. Missing,
+    extra, or failed attempted tools count as a failure, which keeps the metric
+    honest for frameworks that over-call or recover after invalid calls.
     """
-    observed = [c.name for c in obs.tool_calls if c.ok]
-    return observed == list(prompt.expected_tool_sequence)
+    observed = [c.name for c in obs.tool_calls]
+    return observed == list(prompt.expected_tool_sequence) and all(c.ok for c in obs.tool_calls)
 
 
 def answer_quality(obs: PromptObservation, prompt: Prompt) -> bool:

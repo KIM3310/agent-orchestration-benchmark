@@ -5,7 +5,7 @@
   "repository_url": "https://github.com/KIM3310/agent-orchestration-benchmark",
   "architecture_url": "https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/system-architecture.md",
   "revenue_architecture_url": "https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/revenue-architecture.md",
-  "lead_capture_url": "https://github.com/KIM3310/agent-orchestration-benchmark/issues/new?template=service-inquiry.yml&title=Private+workspace+inquiry%3A+Agent+Orchestration+Benchmark",
+  "lead_capture_url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark&inquiry=agent-reliability-audit#private-inquiry",
   "productized_offer": "benchmark harness and report generator for agent orchestration reliability",
   "first_paid_sku": "paid benchmark report pack, private scenario suite, and recurring provider regression dashboard",
   "free_lead_magnet": "free benchmark methodology and sample leaderboard",
@@ -64,7 +64,7 @@
         "@type": "Offer",
         "name": "paid benchmark report pack, private scenario suite, and recurring provider regression dashboard",
         "availability": "https://schema.org/LimitedAvailability",
-        "url": "https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/revenue-architecture.md"
+        "url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark&inquiry=agent-reliability-audit#private-inquiry"
       }
     ],
     "isAccessibleForFree": true,
@@ -72,20 +72,20 @@
   },
   "commerce": {
     "gateway_url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark#service-offers",
-    "lane_id": "stagepilot-reliability-lab",
-    "lane_name": "StagePilot Reliability Lab",
+    "lane_id": "agent-reliability-audit",
+    "lane_name": "Agent Reliability Audit",
     "billing_mode": "one-time",
-    "price_unit": "reliability report pack from USD 500",
-    "fulfillment_kind": "private scenario suite, trace review, retry and parser findings, and provider scorecard",
+    "price_unit": "fixed audit from USD 1,500",
+    "fulfillment_kind": "private scenario suite, trace review, failure taxonomy, provider scorecard, and prioritized remediation plan",
     "risk_bucket": "standard-b2b",
     "checkout": {
-      "provider": "lemon-squeezy",
-      "status": "account-onboarding-required",
-      "fallback_url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark#service-offers"
+      "provider": null,
+      "status": "not-configured",
+      "fallback_url": "https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark&inquiry=agent-reliability-audit#private-inquiry"
     },
     "sponsorship": {
       "provider": "github-sponsors",
-      "eligible": true,
+      "eligible": false,
       "status": "sponsors-listing-not-configured"
     },
     "advertising": {

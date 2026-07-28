@@ -12,6 +12,7 @@ This document turns the repository architecture into a zero-to-low-cost service 
 | Free lead magnet | free benchmark methodology and sample leaderboard |
 | Paid expansion | report credits, private eval scenarios, and hosted benchmark API |
 | Data / workflow moat | scenario traces, latency/cost/reliability baselines, and model-provider comparison history |
+| Private inquiry | https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark&inquiry=agent-reliability-audit#private-inquiry |
 
 ## Free-Tier-First Launch Stack
 
@@ -52,7 +53,7 @@ flowchart LR
 ## 30-Day Revenue Test
 
 1. Publish the public demo or architecture page with one clear CTA: request private workspace, download a pack, or run a sample report.
-2. Add a lead capture route using Workers + D1/KV, Supabase, Firebase, or a GitHub issue form.
+2. Route confidential and commercial requests through the [central Cloudflare D1 private inquiry](https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark&inquiry=agent-reliability-audit#private-inquiry); keep public GitHub issues limited to non-confidential product discussion.
 3. Create one downloadable artifact: report PDF, template pack, runbook, dataset sample, or export bundle.
 4. Offer a fixed-scope paid package before building subscription complexity.
 5. Track activation manually first: visits, CTA clicks, export requests, email replies, and paid pilot conversations.
