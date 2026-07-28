@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-07-28",
+  "owner": "KIM3310",
+  "repo": "agent-orchestration-benchmark",
+  "positioning": "Free orchestration benchmark scenario matrix for comparing agent routing and recovery behavior.",
+  "audience": "agent platform engineers and evaluation leads",
+  "public_resource": {
+    "url": "https://kim3310-doeon-kim-portfolio.pages.dev/resources/agent-orchestration-benchmark/",
+    "live_demo": "https://kim3310.github.io/agent-orchestration-benchmark/",
+    "readiness_checklist": [
+      "Architecture Summary",
+      "Runtime And Data Flow",
+      "Cloud Or Local Deployment Boundary",
+      "Deployment patterns",
+      "Control boundaries"
+    ]
+  },
+  "ad_supported_revenue": {
+    "participates": true,
+    "delivery_surface": "central policy-eligible public resource page",
+    "boundary": "ads allowed only on public benchmark methodology pages; private traces, scenario runs, and score dashboards are ad-free",
+    "provider": "google-adsense",
+    "publisher_id": "ca-pub-4973160293737562",
+    "status": "code-ready-site-review-dependent"
+  },
+  "aggregate_data": {
+    "data_asset": "anonymous aggregate benchmark scenario interest and methodology downloads",
+    "sensitivity_class": "agent-reliability-public",
+    "allowed_events": [
+      "resource_view",
+      "resource_cta_click",
+      "architecture_doc_open",
+      "privacy_support_open"
+    ],
+    "prohibited_fields": [
+      "raw_input",
+      "prompt",
+      "url",
+      "referrer",
+      "title",
+      "user_id",
+      "session_id",
+      "ip_address",
+      "device_id",
+      "payment_detail"
+    ],
+    "consent_default": "off",
+    "dnt_gpc": "fail-closed",
+    "sale_boundary": "forbid sale of personal, sensitive, raw, event-level, or re-identifiable data",
+    "event_store": "Cloudflare D1 daily aggregate counters",
+    "public_data_mart": "Firebase Firestore kim3310-free-tools"
+  }
+}

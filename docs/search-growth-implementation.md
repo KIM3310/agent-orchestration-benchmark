@@ -11,6 +11,7 @@ This repository now exposes a search-readable service surface in addition to the
 | System architecture | [docs/system-architecture.md](./system-architecture.md) |
 | Public canonical URL | https://kim3310.github.io/agent-orchestration-benchmark/ |
 | Lead capture URL | https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark&inquiry=agent-reliability-audit#private-inquiry |
+| Repository resource route | https://kim3310-doeon-kim-portfolio.pages.dev/resources/agent-orchestration-benchmark/ |
 | Commercial route | https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark#service-offers |
 
 ## Search Positioning

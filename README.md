@@ -462,9 +462,20 @@ MIT. See [LICENSE](LICENSE). Copyright (c) 2026 Doeon Kim.
 - Paid boundary: paid benchmark report pack, private scenario suite, and recurring provider regression dashboard
 - Canonical URL: https://kim3310.github.io/agent-orchestration-benchmark/
 - Lead capture: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark&inquiry=agent-reliability-audit#private-inquiry
+- Resource route: https://kim3310-doeon-kim-portfolio.pages.dev/resources/agent-orchestration-benchmark/
 - Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark#service-offers
 - Machine-readable offer: [docs/service-offer.json](docs/service-offer.json)
 - Search growth implementation: [docs/search-growth-implementation.md](docs/search-growth-implementation.md)
 - Revenue architecture: [docs/revenue-architecture.md](docs/revenue-architecture.md)
 
 <!-- search-growth-readme:end -->
+
+<!-- KIM3310:AD-DATA-PIVOT:START -->
+## Free Resource, Advertising, and Aggregate Data
+
+- [Public utility and architecture checklist](https://kim3310-doeon-kim-portfolio.pages.dev/resources/agent-orchestration-benchmark/)
+- Revenue model: contextual advertising on the policy-eligible central resource page.
+- Aggregate value: anonymous aggregate benchmark scenario interest and methodology downloads
+- Boundary: ads allowed only on public benchmark methodology pages; private traces, scenario runs, and score dashboards are ad-free
+- Consent defaults off, DNT/GPC fail closed, and personal or sensitive data is never sold.
+<!-- KIM3310:AD-DATA-PIVOT:END -->
