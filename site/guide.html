@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Guide | Agent Orchestration Benchmark</title>
+  <meta name="description" content="Free orchestration benchmark scenario matrix for comparing agent routing and recovery behavior. Source-backed guide for agent platform engineers and…">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="google-adsense-account" content="ca-pub-4973160293737562">
+  <link rel="canonical" href="https://agent-orchestration-benchmark.pages.dev/guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Project Guide | Agent Orchestration Benchmark">
+  <meta property="og:description" content="Free orchestration benchmark scenario matrix for comparing agent routing and recovery behavior. Source-backed guide for agent platform engineers and evaluation leads.">
+  <meta property="og:url" content="https://agent-orchestration-benchmark.pages.dev/guide.html">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Project Guide | Agent Orchestration Benchmark","description":"Free orchestration benchmark scenario matrix for comparing agent routing and recovery behavior. Source-backed guide for agent platform engineers and evaluation leads.","url":"https://agent-orchestration-benchmark.pages.dev/guide.html","dateModified":"2026-07-28","author":{"@type":"Person","name":"KIM3310","url":"https://github.com/KIM3310"},"publisher":{"@type":"Person","name":"KIM3310","url":"https://kim3310-doeon-kim-portfolio.pages.dev"},"isAccessibleForFree":true}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4973160293737562" crossorigin="anonymous"></script>
+  <style>
+    :root { color-scheme: light; --ink: #17201f; --muted: #52605d; --line: #cbd2ce; --paper: #ffffff; --ground: #f5f6f4; --green: #126455; --coral: #c94732; --gold: #b67a00; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ground); color: var(--ink); font: 17px/1.72 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    a { color: var(--green); text-underline-offset: 3px; }
+    .site-header { border-bottom: 1px solid var(--line); background: rgba(245, 246, 244, .97); }
+    .site-nav, .article-shell, .site-footer-inner { width: min(920px, calc(100% - 32px)); margin: 0 auto; }
+    .site-nav { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .site-nav strong { font-size: .92rem; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 14px; font-size: .84rem; }
+    .article-shell { padding: 54px 0 72px; }
+    .breadcrumbs { color: var(--muted); font-size: .82rem; }
+    .article-intro { padding: 28px 0 36px; border-bottom: 2px solid var(--ink); }
+    .kicker { color: var(--coral); font-size: .76rem; font-weight: 800; text-transform: uppercase; }
+    h1 { margin: 10px 0 16px; max-width: 18ch; font-size: 3.5rem; line-height: 1.04; letter-spacing: 0; overflow-wrap: anywhere; }
+    .lede { max-width: 68ch; color: var(--muted); font-size: 1.08rem; }
+    .review-note { margin-top: 18px; color: var(--muted); font-size: .84rem; }
+    article { padding-top: 24px; }
+    article h2 { margin: 42px 0 12px; padding-top: 6px; font-size: 1.75rem; line-height: 1.2; letter-spacing: 0; }
+    article h3 { margin: 30px 0 8px; font-size: 1.2rem; letter-spacing: 0; }
+    article h4 { margin: 24px 0 6px; font-size: 1.02rem; letter-spacing: 0; }
+    article p, article li { max-width: 76ch; }
+    article li + li { margin-top: 6px; }
+    pre { max-width: 100%; overflow: auto; border-left: 4px solid var(--gold); background: #1d2423; color: #f6f8f7; padding: 18px; border-radius: 4px; font-size: .86rem; }
+    code { overflow-wrap: anywhere; }
+    :not(pre) > code { border: 1px solid var(--line); background: var(--paper); padding: 1px 5px; border-radius: 3px; font-size: .9em; }
+    .table-scroll { overflow-x: auto; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; background: var(--paper); font-size: .9rem; }
+    th, td { border: 1px solid var(--line); padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #e9eeeb; }
+    .boundary-note { margin: 30px 0 4px; border-left: 4px solid var(--coral); background: var(--paper); padding: 18px; }
+    .source-basis { margin-top: 48px; border-top: 1px solid var(--line); padding-top: 22px; color: var(--muted); }
+    .site-footer { border-top: 1px solid var(--line); background: var(--paper); }
+    .site-footer-inner { padding: 28px 0 44px; color: var(--muted); font-size: .84rem; }
+    .site-footer-links { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 12px; }
+    @media (max-width: 720px) {
+      .site-nav { align-items: flex-start; flex-direction: column; padding: 14px 0; }
+      .article-shell { padding-top: 32px; }
+      h1 { font-size: 2.35rem; }
+    }
+  </style>
+</head>
+<body data-ad-surface="editorial">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <strong>Agent Orchestration Benchmark</strong>
+      <div class="nav-links"><a href="/">Home</a><a href="/guide.html">Project guide</a><a href="/architecture.html">Architecture</a><a href="/verification.html">Verification</a><a href="/publisher.html">Publisher</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+    </nav>
+  </header>
+  <main class="article-shell">
+    <p class="breadcrumbs"><a href="/">Home</a> / Project guide</p>
+    <header class="article-intro">
+      <div class="kicker">Project guide</div>
+      <h1>Project Guide | Agent Orchestration Benchmark</h1>
+      <p class="lede">Free orchestration benchmark scenario matrix for comparing agent routing and recovery behavior. This guide organizes the repository&#039;s original implementation notes for agent platform engineers and evaluation leads.</p>
+      <p class="review-note">Reviewed 2026-07-28. This page is derived from checked-in repository evidence and links back to its source.</p>
+    </header>
+
+    <article><h3>Live Demo</h3>
+<ul><li><a href="https://agent-orchestration-benchmark.pages.dev/" rel="noopener">Open the public GitHub Pages demo</a></li><li>Scope: credential-free, synthetic-data demo for AI platform teams and technical evaluators.</li></ul>
+<p>Standardized benchmark suite comparing LLM agent orchestration frameworks on a shared task. Measures reliability, latency, cost, and deterministic replay — the metrics that matter for production operators.</p>
+<p>---</p>
+<h3>System Overview</h3>
+<p>A benchmark suite that lets teams compare orchestration runtimes before they commit to a fragile agent stack.</p>
+<div class="table-scroll"><table><thead><tr><th>Area</th><th>Details</th></tr></thead><tbody><tr><td>Users</td><td>AI platform teams, developer-tool teams, and engineering leaders evaluating agent frameworks.</td></tr><tr><td>Technical path</td><td>Validate the demo, README, architecture notes, and quality gate before deeper workflow review.</td></tr><tr><td>System scope</td><td>Standardized fixtures, comparative reports, deterministic runs, and inspectable benchmark outputs.</td></tr><tr><td>Operating boundary</td><td>Benchmarks are decision support, not universal model rankings; teams should extend fixtures to their real workflows.</td></tr><tr><td>Evaluation path</td><td>Run the benchmark command, review generated reports, and compare framework behavior against the fixture suite.</td></tr></tbody></table></div>
+<h3>Evaluation Path</h3>
+<ul><li><strong>Start here:</strong> Compare <code>results/latest.md</code> or the sample run before reading runner internals.</li><li><strong>Local demo:</strong> Run <code>make install-dev &amp;&amp; make bench</code>; no model API key is required for the mock run.</li><li><strong>Checks:</strong> Run <code>make test</code> and <code>make lint</code>; rerender reports with <code>make report</code>.</li></ul>
+<h3>Architecture Notes</h3>
+<ul><li><a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/architecture-evidence-map.md" rel="noopener">Architecture guide</a> summarizes the system scope, first files to inspect, runtime commands, and known boundaries.</li><li><a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/quality-gate.md" rel="noopener">Quality notes</a> lists the local checks, CI surface, and release expectations for this repository.</li><li><a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/enterprise-readiness.md" rel="noopener">Enterprise readiness notes</a> outlines security, data, operations, integration, and handoff expectations.</li></ul>
+<h3>Why this exists</h3>
+<p>Teams picking between LangGraph, CrewAI, AutoGen, and home-grown orchestrators currently have no apples-to-apples comparison. Public benchmarks either optimise for narrow correctness metrics on toy prompts, or they measure one framework in isolation with no shared task across competitors. That gap leaves engineers relying on vendor marketing and three-paragraph blog posts when picking a production orchestrator.</p>
+<p>This repository provides a reproducible benchmark: one dataset, one set of tools, one grading rubric, four runners. Every runner exposes the same <code>BaseRunner</code> interface, so adding a fifth framework is a fifty-line pull request. CI runs against a built-in deterministic mock LLM so the numerical comparison of orchestrator *shape* requires no API key.</p>
+<p>The four dimensions the benchmark cares about are the four that decide whether an agent ships: correctness (does it pick the right tool?), quality (is the answer acceptable?), cost (tokens, cash, wall-clock), and reproducibility (does the same input produce the same calls?). Most agent benchmarks leave the last dimension out; operators pay for that every on-call rotation.</p>
+<p>---</p>
+<h3>Quick start</h3>
+<pre><code>git clone https://github.com/KIM3310/agent-orchestration-benchmark.git
+cd agent-orchestration-benchmark
+make install-dev
+make bench          # mock-LLM run, no API key required
+
+
+## If your default python3 is older than 3.11:
+make BOOTSTRAP_PYTHON=/path/to/python3.11 install-dev</code></pre>
+<p>Results land under <code>results/</code>:</p>
+<pre><code>results/
+  latest.json        # machine-readable
+  latest.md          # human-readable markdown
+  latest.html        # standalone HTML report with prompt and tool-call evidence</code></pre>
+<p>To re-render reports without re-executing the benchmark:</p>
+<pre><code>python -m scripts.run_bench --report-only --input results/latest.json</code></pre>
+<p>To request each framework adapter&#039;s live path:</p>
+<pre><code>export OPENAI_API_KEY=sk-...
+make bench-live</code></pre>
+<p>The generated report labels this mode <code>LIVE / CONFIGURED</code>. That label records the requested adapter path; it does not by itself prove provider traffic. Provider credentials and integration depth differ by adapter, so confirm exceptions, token counters, and provider-side logs before making comparisons.</p>
+<p>A working sample run is checked in at <a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/results/sample_run_2026-04-16.json" rel="noopener">`results/sample_run_2026-04-16.json`</a>. The numbers in <a href="#sample-results" rel="noopener">Sample Results</a> are rendered from that file.</p>
+<p>---</p>
+<h3>Architecture</h3>
+<pre><code>flowchart LR
+    F[&quot;fixtures/benchmark_prompts.jsonl&lt;br/&gt;(20 prompts)&quot;] --&gt; R
+    subgraph Runner
+      R[&quot;BenchmarkRunner&quot;] --&gt; A1[&quot;stage-pilot-style&quot;]
+      R --&gt; A2[&quot;LangGraph&quot;]
+      R --&gt; A3[&quot;CrewAI&quot;]
+      R --&gt; A4[&quot;AutoGen&quot;]
+    end
+    A1 &amp; A2 &amp; A3 &amp; A4 --&gt; TOOL[&quot;Shared tools&lt;br/&gt;query_sales_data · summarize_trend&quot;]
+    TOOL --&gt; M[&quot;MetricsCollector&lt;br/&gt;latency · tokens · retries · fingerprints&quot;]
+    M --&gt; RPT[&quot;Report generators&lt;br/&gt;JSON · Markdown · HTML&quot;]
+    RPT --&gt; OUT[(&quot;results/*&quot;)]</code></pre>
+<p>The runner is pluggable: each framework adapter implements <code>src.runners.base.BaseRunner</code> and is registered in <code>scripts/run_bench.py</code>. Metrics and reports are framework-agnostic, so a new adapter automatically inherits the full output pipeline.</p>
+<p>---</p>
+<h3>Frameworks benchmarked</h3>
+<div class="table-scroll"><table><thead><tr><th>Framework</th><th>Version</th><th>Paradigm</th><th>Notes</th></tr></thead><tbody><tr><td><a href="https://langchain-ai.github.io/langgraph/" rel="noopener">LangGraph</a></td><td><code>1.2.4</code></td><td>Stateful graph</td><td>Nodes + conditional edges.</td></tr><tr><td><a href="https://docs.crewai.com/" rel="noopener">CrewAI</a></td><td><code>0.86.0</code></td><td>Role-based crew</td><td>Agents with role/goal/backstory.</td></tr><tr><td><a href="https://microsoft.github.io/autogen/" rel="noopener">AutoGen</a></td><td><code>0.4.0</code></td><td>Conversational</td><td>Assistant + user proxy dialogue loop.</td></tr><tr><td><strong>stage-pilot-style</strong> (this repo)</td><td>—</td><td>Deterministic tool-calling parser</td><td>~200 LOC baseline modelled on <a href="https://github.com/KIM3310/stage-pilot" rel="noopener">stage-pilot</a>.</td></tr></tbody></table></div>
+<p>The fourth runner (<code>stage-pilot-style</code>) is a minimal in-house baseline. It exists so the report answers the operator&#039;s real question: &quot;is the framework giving me net value over a well-designed script?&quot;</p>
+<p>All adapters default to a built-in mock LLM so CI runs are free and deterministic. Live mode requests each adapter&#039;s integration path and must be validated against that adapter&#039;s provider prerequisites.</p>
+<p>---</p>
+<h3>Metrics</h3>
+<div class="table-scroll"><table><thead><tr><th>Metric</th><th>What it measures</th><th>Why operators care</th></tr></thead><tbody><tr><td><code>tool_call_success_rate</code></td><td>Fraction of prompts whose observed tool sequence exactly matches the expected one.</td><td>If the agent calls the wrong tool or skips a tool, nothing else matters.</td></tr><tr><td><code>final_answer_quality</code></td><td>Fraction of final answers passing keyword + regex grading.</td><td>Proxy for user-visible correctness.</td></tr><tr><td><code>latency_p50_ms / p95_ms / p99_ms</code></td><td>Nearest-rank percentiles over per-prompt wall time.</td><td>Tail latency is what breaks SLOs.</td></tr><tr><td><code>tokens_in / tokens_out</code></td><td>Sum across all tool-calling rounds.</td><td>Upstream cost signal; independent of scope.</td></tr><tr><td><code>total_cost_usd</code></td><td>Derived from the scope table in <code>src/config.py</code>.</td><td>A concrete dollar number for budget pitches.</td></tr><tr><td><code>retry_count</code></td><td>Adapter-initiated retries across all prompts.</td><td>Fragility of the tool-call parser.</td></tr><tr><td><code>exception_rate</code></td><td>Fraction of prompts that raised.</td><td>Operators feel this as pages.</td></tr><tr><td><code>deterministic_replay_rate</code></td><td>Fraction of prompts whose replay fingerprints collapse to a single value.</td><td>Whether the orchestrator is reproducible under fixed input.</td></tr></tbody></table></div>
+<p>See <a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/methodology.md" rel="noopener">`docs/methodology.md`</a> for exact formulas, and <a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/adr/002-metric-definitions.md" rel="noopener">ADR 002</a> for the rationale.</p>
+<p>---</p>
+<h3>Sample results</h3>
+<p>Rendered from <a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/results/sample_run_2026-04-16.json" rel="noopener">`results/sample_run_2026-04-16.json`</a>. Lower is better for latency, cost, retries, and exception rate; higher is better for everything else.</p>
+<h4>Framework summary</h4>
+<div class="table-scroll"><table><thead><tr><th>Framework</th><th>Tool Success</th><th>Answer Quality</th><th>p50 (ms)</th><th>p95 (ms)</th><th>p99 (ms)</th><th>Tokens In</th><th>Tokens Out</th><th>Cost (USD)</th><th>Retries</th><th>Exception Rate</th><th>Replay Stability</th></tr></thead><tbody><tr><td>stage-pilot-style</td><td>1.000</td><td>0.950</td><td>8.4</td><td>21.3</td><td>32.1</td><td>1,709</td><td>1,217</td><td>0.000987</td><td>0</td><td>0.000</td><td>1.000</td></tr><tr><td>langgraph</td><td>0.950</td><td>0.900</td><td>18.7</td><td>64.5</td><td>102.3</td><td>2,814</td><td>1,905</td><td>0.001565</td><td>3</td><td>0.050</td><td>0.900</td></tr><tr><td>autogen</td><td>0.900</td><td>0.800</td><td>25.6</td><td>85.4</td><td>142.9</td><td>3,592</td><td>2,411</td><td>0.001985</td><td>5</td><td>0.050</td><td>0.850</td></tr><tr><td>crewai</td><td>0.850</td><td>0.850</td><td>31.4</td><td>110.2</td><td>178.6</td><td>4,440</td><td>2,808</td><td>0.002352</td><td>7</td><td>0.100</td><td>0.750</td></tr></tbody></table></div>
+<h4>How to read this</h4>
+<p>  because it has no implicit state — every tool call is argument-checked   and fingerprintable. It also wins on cost because the conversation   pattern is shortest.</p>
+<p>  tool-calling loop rehydrates extra state into the prompt. Tool success   is close to parity.</p>
+<p>  reporter roughly doubles the number of LLM calls per prompt. That also   shows up as the highest retry count.</p>
+<p>  predictable than CrewAI&#039;s role negotiation but less economical than a   single-assistant loop.</p>
+<ul><li><strong>stage-pilot-style</strong> wins on both correctness and replay stability</li><li><strong>LangGraph</strong> trails on cost and retry count mostly because its default</li><li><strong>CrewAI</strong> is the slowest; the role-based hand-off between analyst and</li><li><strong>AutoGen</strong> sits between LangGraph and CrewAI. Its proxy pattern is more</li></ul>
+<p>Numbers are mock-LLM to keep the comparison reproducible. Do not extrapolate their ranking to live providers without a separately verified live run.</p>
+<h4>Per-framework deltas at a glance</h4>
+<div class="table-scroll"><table><thead><tr><th>Framework</th><th>vs stage-pilot-style cost</th><th>vs stage-pilot-style p95</th><th>Tool success delta</th></tr></thead><tbody><tr><td>langgraph</td><td><code>+58.6 %</code></td><td><code>+203 %</code></td><td><code>-5 pp</code></td></tr><tr><td>autogen</td><td><code>+101.1 %</code></td><td><code>+301 %</code></td><td><code>-10 pp</code></td></tr><tr><td>crewai</td><td><code>+138.3 %</code></td><td><code>+417 %</code></td><td><code>-15 pp</code></td></tr></tbody></table></div>
+<p>---</p>
+<h3>Extending</h3>
+<p>Adding a new framework is a four-step process:</p>
+<p>   <code>src.runners.base.BaseRunner</code>. Implement <code>run_prompt(prompt) -&gt; PromptObservation</code>.</p>
+<p>   runners do; the benchmark guarantees determinism as long as you do.</p>
+<p>   one fixture prompt.</p>
+<ol><li>Create <code>src/runners/&lt;name&gt;_runner.py</code> that subclasses</li><li>In mock mode, call <code>self.llm.complete(...)</code> exactly as the existing</li><li>Register the runner in <code>scripts/run_bench.py</code> (<code>FRAMEWORK_CHOICES</code>).</li><li>Add a test file under <code>tests/</code> that validates the runner on at least</li></ol>
+<p>A minimal adapter is roughly 40 lines. See <a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/src/runners/autogen_runner.py" rel="noopener">`src/runners/autogen_runner.py`</a> for the shortest existing example.</p>
+<p>---</p>
+<h3>Methodology</h3>
+<p>The benchmark isolates orchestrator behaviour by holding prompts, tools, grading, and the mock backend constant in CI. Live mode requests adapter-specific integration paths, whose provider setup can differ. Every run freezes its prompt contracts and records per-prompt observations alongside the framework summary so the aggregate can be audited at the individual-call level. Full write-up: <a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/methodology.md" rel="noopener">`docs/methodology.md`</a>.</p>
+<p>Key invariants the benchmark enforces:</p>
+<p>   must produce an answer that satisfies the same keyword + regex grader.</p>
+<p>   implementations in <code>src/task.py</code> are pure functions of their input;    identical arguments always produce identical output.</p>
+<p>   <code>config.seed</code>. Frameworks do not get to bring their own completion    strategy in CI.</p>
+<p>   orchestrator cannot distort aggregate metrics.</p>
+<p>   <code>src/config.py</code> is the only place that translates tokens to dollars.</p>
+<ol><li><strong>Shared task.</strong> Every framework receives the same twenty prompts and</li><li><strong>Shared tools.</strong> The <code>query_sales_data</code> and <code>summarize_trend</code></li><li><strong>Shared LLM.</strong> The <code>MockLLM</code> in <code>src/runners/base.py</code> is seeded with</li><li><strong>Bounded loops.</strong> Every adapter caps its own loop count so a runaway</li><li><strong>Single source of truth for scope.</strong> <code>PRICING_USD_PER_MTOK</code> in</li></ol>
+<p>Related reading:</p>
+<ul><li><a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/adr/001-framework-selection.md" rel="noopener">ADR 001: Framework Selection</a></li><li><a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/adr/002-metric-definitions.md" rel="noopener">ADR 002: Metric Definitions</a></li><li><a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/adr/003-determinism-requirements.md" rel="noopener">ADR 003: Determinism Requirements</a></li><li><a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/results-interpretation.md" rel="noopener">Results Interpretation Guide</a></li></ul>
+<p>---</p>
+<h3>Project structure</h3>
+<pre><code>agent-orchestration-benchmark/
+├── README.md
+├── LICENSE
+├── pyproject.toml
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+├── Makefile
+├── .gitignore
+├── .dockerignore
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── src/
+│   ├── __init__.py
+│   ├── config.py              # models, scope, retry budgets, timeouts
+│   ├── task.py                # standardized task + deterministic tools
+│   ├── fixtures.py            # prompt loader + grading contract
+│   ├── metrics.py             # metric primitives + aggregation
+│   ├── runner.py              # BenchmarkRunner (drives adapters)
+│   ├── report.py              # JSON / Markdown / HTML renderers
+│   └── runners/
+│       ├── __init__.py
+│       ├── base.py            # BaseRunner protocol + MockLLM
+│       ├── langgraph_runner.py
+│       ├── crewai_runner.py
+│       ├── autogen_runner.py
+│       └── stage_pilot_style.py  # deterministic tool-calling loop, ~200 LOC
+├── tests/
+│   ├── __init__.py
+│   ├── test_task.py
+│   ├── test_metrics.py
+│   ├── test_stage_pilot_style.py
+│   └── test_report.py
+├── fixtures/
+│   └── benchmark_prompts.jsonl   # 20 standardized prompts
+├── results/
+│   └── sample_run_2026-04-16.json
+├── docs/
+│   ├── methodology.md
+│   ├── results-interpretation.md
+│   └── adr/
+│       ├── 001-framework-selection.md
+│       ├── 002-metric-definitions.md
+│       └── 003-determinism-requirements.md
+└── scripts/
+    ├── __init__.py
+    ├── run_bench.py              # python -m scripts.run_bench
+    └── run_bench.sh              # convenience wrapper</code></pre>
+<p>---</p></article>
+    <aside class="source-basis">
+      <strong>Source basis:</strong> <a href="https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/README.md" rel="noopener">README.md</a>. Corrections can be proposed through the public repository without submitting private data.
+    </aside>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-links"><a href="/">Home</a><a href="/guide.html">Project guide</a><a href="/architecture.html">Architecture</a><a href="/verification.html">Verification</a><a href="/publisher.html">Publisher</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="https://kim3310-doeon-kim-portfolio.pages.dev/">Resource atlas</a></div>
+      <p>Advertising may appear on this public editorial page after Google approves the site. Ads are not placed inside private, transactional, diagnostic, security-response, or operational workflows.</p>
+    </div>
+  </footer>
+</body>
+</html>

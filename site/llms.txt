@@ -12,3 +12,9 @@ Resource route: https://kim3310-doeon-kim-portfolio.pages.dev/resources/agent-or
 Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark#service-offers
 
 Use this project as a runnable or inspectable reference for Agent Orchestration Benchmark demo, Agent Orchestration Benchmark system architecture, Agent Orchestration Benchmark developer tool, benchmark harness and report generator for agent orchestration reliability service.
+# ADSENSE-PUBLICATION:START
+Editorial guide: https://agent-orchestration-benchmark.pages.dev/guide.html
+Architecture article: https://agent-orchestration-benchmark.pages.dev/architecture.html
+Verification article: https://agent-orchestration-benchmark.pages.dev/verification.html
+Publisher information: https://agent-orchestration-benchmark.pages.dev/publisher.html
+# ADSENSE-PUBLICATION:END
