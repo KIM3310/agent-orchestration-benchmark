@@ -8,7 +8,7 @@ Free orchestration benchmark scenario matrix for comparing agent routing and rec
 
 - Audience: agent platform engineers and evaluation leads
 - Central resource: https://kim3310-doeon-kim-portfolio.pages.dev/resources/agent-orchestration-benchmark/
-- Live system: https://kim3310.github.io/agent-orchestration-benchmark/
+- Live system: https://agent-orchestration-benchmark.pages.dev/
 - Advertising boundary: ads allowed only on public benchmark methodology pages; private traces, scenario runs, and score dashboards are ad-free
 - Current ad state: code-ready on the central resource; serving depends on Google AdSense site approval and consent policy.
 

@@ -2,7 +2,7 @@
 
 ## Public Demo
 
-- URL: https://kim3310.github.io/agent-orchestration-benchmark/
+- URL: https://agent-orchestration-benchmark.pages.dev/
 - Scope: credential-free synthetic demo surface for quick technical evaluation.
 
 Repository: `agent-orchestration-benchmark`

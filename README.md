@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-- [Open the public GitHub Pages demo](https://kim3310.github.io/agent-orchestration-benchmark/)
+- [Open the public GitHub Pages demo](https://agent-orchestration-benchmark.pages.dev/)
 - Scope: credential-free, synthetic-data demo for AI platform teams and technical evaluators.
 
 > Standardized benchmark suite comparing LLM agent orchestration frameworks on a shared task. Measures reliability, latency, cost, and deterministic replay — the metrics that matter for production operators.
@@ -460,7 +460,7 @@ MIT. See [LICENSE](LICENSE). Copyright (c) 2026 Doeon Kim.
 
 - Public entry: free benchmark methodology and sample leaderboard
 - Paid boundary: paid benchmark report pack, private scenario suite, and recurring provider regression dashboard
-- Canonical URL: https://kim3310.github.io/agent-orchestration-benchmark/
+- Canonical URL: https://agent-orchestration-benchmark.pages.dev/
 - Lead capture: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark&inquiry=agent-reliability-audit#private-inquiry
 - Resource route: https://kim3310-doeon-kim-portfolio.pages.dev/resources/agent-orchestration-benchmark/
 - Commercial route: https://kim3310-doeon-kim-portfolio.pages.dev/?offer=agent-orchestration-benchmark#service-offers

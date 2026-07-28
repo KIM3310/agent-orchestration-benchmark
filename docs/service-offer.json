@@ -1,7 +1,7 @@
 {
   "name": "Agent Orchestration Benchmark",
   "slug": "agent-orchestration-benchmark",
-  "canonical_url": "https://kim3310.github.io/agent-orchestration-benchmark/",
+  "canonical_url": "https://agent-orchestration-benchmark.pages.dev/",
   "repository_url": "https://github.com/KIM3310/agent-orchestration-benchmark",
   "architecture_url": "https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/system-architecture.md",
   "revenue_architecture_url": "https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/revenue-architecture.md",
@@ -43,7 +43,7 @@
     "name": "Agent Orchestration Benchmark",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Web, serverless, and local development environments",
-    "url": "https://kim3310.github.io/agent-orchestration-benchmark/",
+    "url": "https://agent-orchestration-benchmark.pages.dev/",
     "codeRepository": "https://github.com/KIM3310/agent-orchestration-benchmark",
     "description": "Agent Orchestration Benchmark: benchmark harness and report generator for agent orchestration reliability. Free entry point: free benchmark methodology and sample leaderboard. Paid path: paid benchmark report pack.",
     "creator": {
@@ -58,7 +58,7 @@
         "price": "0",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://kim3310.github.io/agent-orchestration-benchmark/"
+        "url": "https://agent-orchestration-benchmark.pages.dev/"
       },
       {
         "@type": "Offer",

@@ -1,0 +1,5 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "agent-orchestration-benchmark",
+  "pages_build_output_dir": "site"
+}

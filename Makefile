@@ -1,4 +1,4 @@
-.PHONY: help install install-dev test lint verify format bench bench-mock bench-live report clean docker-build docker-bench
+.PHONY: help install install-dev test lint verify format bench bench-mock bench-live report clean docker-build docker-bench deploy-pages
 
 PYTHON_MIN_VERSION := 3.11
 PYTHON_CANDIDATES = $(VENV)/bin/python python3.13 python3.12 python3.11 python3
@@ -88,3 +88,6 @@ docker-build:
 
 docker-bench:
 	docker compose run --rm benchmark
+
+deploy-pages:
+	npx --yes wrangler@latest pages deploy site --project-name agent-orchestration-benchmark

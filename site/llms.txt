@@ -3,7 +3,7 @@
 Purpose: benchmark harness and report generator for agent orchestration reliability
 Free entry point: free benchmark methodology and sample leaderboard
 Paid boundary: paid benchmark report pack, private scenario suite, and recurring provider regression dashboard
-Canonical URL: https://kim3310.github.io/agent-orchestration-benchmark/
+Canonical URL: https://agent-orchestration-benchmark.pages.dev/
 Repository: https://github.com/KIM3310/agent-orchestration-benchmark
 System architecture: https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/system-architecture.md
 Revenue architecture: https://github.com/KIM3310/agent-orchestration-benchmark/blob/main/docs/revenue-architecture.md

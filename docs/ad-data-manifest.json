@@ -6,7 +6,7 @@
   "audience": "agent platform engineers and evaluation leads",
   "public_resource": {
     "url": "https://kim3310-doeon-kim-portfolio.pages.dev/resources/agent-orchestration-benchmark/",
-    "live_demo": "https://kim3310.github.io/agent-orchestration-benchmark/",
+    "live_demo": "https://agent-orchestration-benchmark.pages.dev/",
     "readiness_checklist": [
       "Architecture Summary",
       "Runtime And Data Flow",
