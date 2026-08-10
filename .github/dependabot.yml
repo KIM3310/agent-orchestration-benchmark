@@ -4,8 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "monday"
-      time: "09:00"
+      day: "friday"
+      time: "08:00"
       timezone: "Asia/Seoul"
     open-pull-requests-limit: 5
     groups:
@@ -24,7 +24,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "monday"
-      time: "09:00"
+      time: "08:10"
       timezone: "Asia/Seoul"
     open-pull-requests-limit: 5
     groups:
@@ -42,8 +42,8 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "monday"
-      time: "09:00"
+      day: "tuesday"
+      time: "08:10"
       timezone: "Asia/Seoul"
     open-pull-requests-limit: 5
     groups:
