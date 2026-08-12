@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-- [Open the public GitHub Pages demo](https://agent-orchestration-benchmark.pages.dev/)
+- [Open the public Cloudflare Pages demo](https://agent-orchestration-benchmark.pages.dev/)
 - Scope: credential-free, synthetic-data demo for AI platform teams and technical evaluators.
 
 > Standardized benchmark suite comparing LLM agent orchestration frameworks on a shared task. Measures reliability, latency, cost, and deterministic replay — the metrics that matter for production operators.
@@ -22,7 +22,6 @@ A benchmark suite that lets teams compare orchestration runtimes before they com
 | Area | Details |
 |---|---|
 | Users | AI platform teams, developer-tool teams, and engineering leaders evaluating agent frameworks. |
-| Technical path | Validate the demo, README, architecture notes, and quality gate before deeper workflow review. |
 | System scope | Standardized fixtures, comparative reports, deterministic runs, and inspectable benchmark outputs. |
 | Operating boundary | Benchmarks are decision support, not universal model rankings; teams should extend fixtures to their real workflows. |
 | Evaluation path | Run the benchmark command, review generated reports, and compare framework behavior against the fixture suite. |
@@ -54,8 +53,8 @@ three-paragraph blog posts when picking a production orchestrator.
 
 This repository provides a reproducible benchmark: one dataset, one set of
 tools, one grading rubric, four runners. Every runner exposes the same
-`BaseRunner` interface, so adding a fifth framework is a fifty-line pull
-request. CI runs against a built-in deterministic mock LLM so the
+`BaseRunner` interface, so a new adapter follows the same contract and test
+surface rather than a framework-specific benchmark path. CI runs against a built-in deterministic mock LLM so the
 numerical comparison of orchestrator *shape* requires no API key.
 
 The four dimensions the benchmark cares about are the four that decide
@@ -355,7 +354,7 @@ This benchmark complements several other tools published under
   distillation of its deterministic parser loop.
 * **[Nexus-Hive](https://github.com/KIM3310/Nexus-Hive)** — multi-agent
   NL-to-SQL copilot. The analytics flavour of the benchmark task mirrors
-  what Nexus-Hive agents do in production.
+  the governed workflow demonstrated by Nexus-Hive in its synthetic-data demo mode.
 * **[AegisOps](https://github.com/KIM3310/AegisOps)** — multimodal incident
   analysis with operator handoff. Shares the "human-auditable tool trace"
   design principle used here.
@@ -364,8 +363,8 @@ This benchmark complements several other tools published under
   reproducible-fingerprint model is the orchestrator analogue of the
   audit log in that kit.
 * **[districtpilot-ai](https://github.com/KIM3310/districtpilot-ai)** —
-  Snowflake Korea Hackathon 2026 submission. A real-world deployment of
-  a similar tool-calling agent shape.
+  Snowflake Korea Hackathon 2026 submission. It demonstrates a similar
+  tool-calling agent shape with bounded demo and synthetic-data assumptions.
 
 ---
 
@@ -380,7 +379,7 @@ If you use this benchmark in a paper or blog post, please cite it as:
              LLM Agent Orchestration Frameworks},
   year    = {2026},
   url     = {https://github.com/KIM3310/agent-orchestration-benchmark},
-  version = {0.1.0}
+  note    = {Repository snapshot; no release tag published}
 }
 ```
 
@@ -388,11 +387,11 @@ If you use this benchmark in a paper or blog post, please cite it as:
 
 ## Versioning and stability
 
-The benchmark uses semantic-versioning-compatible tags. Breaking changes
-to the metric schema or the prompt fixture set bump the minor version;
-changes that affect only adapter internals bump the patch version. Every
-release tag ships with a sample results file under `results/` so past
-numbers stay reproducible after the tag.
+No release tag has been published yet. The first `v0.x` release will adopt
+semantic-versioning-compatible tags: metric-schema or prompt-fixture changes
+will bump the minor version, while adapter-only changes will bump the patch
+version. A release is complete only when its sample results file is committed
+under `results/`, keeping tagged numbers reproducible.
 
 Schema stability commitments:
 
