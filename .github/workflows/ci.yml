@@ -39,6 +39,9 @@ jobs:
       - name: Black format check
         run: python -m black --check src tests
 
+      - name: Mypy type check
+        run: python -m mypy src
+
       - name: Pytest
         run: python -m pytest tests/ -v --cov=src --cov-report=term-missing
 

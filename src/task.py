@@ -20,7 +20,7 @@ import json
 import re
 import sqlite3
 from dataclasses import asdict, dataclass
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Callable, Dict, List, Optional, Tuple
 
 # ---------------------------------------------------------------------------
 # Tool schemas (OpenAI "tools" format; LangGraph/CrewAI/AutoGen adapters
@@ -218,7 +218,7 @@ def _top_departments(rows: List[Dict[str, Any]], k: int) -> List[str]:
 # ---------------------------------------------------------------------------
 # Unified dispatcher used by runners that prefer a single entry point
 # ---------------------------------------------------------------------------
-TOOL_REGISTRY = {
+TOOL_REGISTRY: Dict[str, Callable[..., Any]] = {
     "query_sales_data": query_sales_data,
     "summarize_trend": summarize_trend,
 }

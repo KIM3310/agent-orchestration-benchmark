@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=83.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -56,6 +56,8 @@ dev = [
     "ruff==0.16.2",
     "black==26.5.1",
     "mypy==1.20.2",
+    # Protect local sdist builds from CVE-2026-59890.
+    "setuptools>=83.0.0",
 ]
 
 [project.urls]

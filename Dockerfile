@@ -9,8 +9,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 
 COPY pyproject.toml requirements.txt ./
-RUN python -m pip install --upgrade pip \
- && pip install --prefix=/install -r requirements.txt
+RUN python -m pip install --upgrade "pip>=26.1.2" "setuptools>=83.0.0" \
+ && python -m pip install --prefix=/install -r requirements.txt \
+ && PYTHONPATH=/install/lib/python3.11/site-packages python -m pip check
 
 # ---------- runtime stage ----------
 FROM python:3.11-slim AS runtime
@@ -28,7 +29,9 @@ COPY fixtures ./fixtures
 COPY scripts ./scripts
 COPY pyproject.toml requirements.txt README.md LICENSE ./
 
-RUN useradd --create-home --uid 1001 bench \
+RUN python -m pip install --no-cache-dir --upgrade "pip>=26.1.2" "setuptools>=83.0.0" \
+ && PYTHONPATH=/install/lib/python3.11/site-packages python -m pip check \
+ && useradd --create-home --uid 1001 bench \
  && mkdir -p /app/results \
  && chown -R bench:bench /app
 USER bench
