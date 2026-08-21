@@ -186,7 +186,7 @@ def _split_for_trend(prev_result: Any, user_text: str) -> tuple[list, list]:
     two non-empty operands.
     """
     rows: List[Dict[str, Any]] = prev_result if isinstance(prev_result, list) else []
-    quarters = sorted({r.get("quarter") for r in rows if r.get("quarter")})
+    quarters = sorted({quarter for row in rows if isinstance(quarter := row.get("quarter"), str)})
     if len(quarters) >= 2:
         a = [r for r in rows if r.get("quarter") == quarters[-1]]
         b = [r for r in rows if r.get("quarter") == quarters[0]]

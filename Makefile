@@ -1,4 +1,4 @@
-.PHONY: help install install-dev test lint verify format bench bench-mock bench-live report clean docker-build docker-bench deploy-pages
+.PHONY: help install install-dev test lint format-check typecheck verify format bench bench-mock bench-live report clean docker-build docker-bench deploy-pages
 
 PYTHON_MIN_VERSION := 3.11
 PYTHON_CANDIDATES = $(VENV)/bin/python python3.13 python3.12 python3.11 python3
@@ -19,6 +19,9 @@ help:
 	@echo "  install-dev   Install runtime + dev dependencies"
 	@echo "  test          Run pytest against the mock-LLM test suite"
 	@echo "  lint          Run ruff against src/ and tests/"
+	@echo "  format-check  Check black formatting without modifying files"
+	@echo "  typecheck     Run mypy against src/"
+	@echo "  verify        Run lint, formatting, typing, and tests"
 	@echo "  format        Run black and ruff --fix"
 	@echo "  bench         Run the full benchmark (uses mock LLM by default)"
 	@echo "  bench-mock    Explicit alias for bench against the mock LLM"
@@ -61,7 +64,13 @@ test: install-dev
 lint: install-dev
 	$(PY) -m ruff check src tests
 
-verify: lint test
+format-check: install-dev
+	$(PY) -m black --check src tests
+
+typecheck: install-dev
+	$(PY) -m mypy src
+
+verify: lint format-check typecheck test
 
 format: install-dev
 	$(PY) -m black src tests

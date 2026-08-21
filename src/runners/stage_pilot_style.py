@@ -153,6 +153,9 @@ class StagePilotStyleRunner(BaseRunner):
                 )
                 continue
 
+            # ``_parse_call`` only returns a missing name alongside an error,
+            # which is handled by the branch above.
+            assert name is not None
             record = dispatch(name, arguments)
             state.tool_calls.append(record)
             if not record.ok:

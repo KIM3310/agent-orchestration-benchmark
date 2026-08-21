@@ -1,4 +1,4 @@
-# agent-orchestration-benchmark
+# Agent Orchestration Benchmark
 
 ## Live Demo
 
@@ -333,6 +333,9 @@ agent-orchestration-benchmark/
 | `make install-dev` | Install runtime + dev dependencies (ruff, black, pytest, mypy). |
 | `make test` | Run the pytest suite against the mock LLM. |
 | `make lint` | Ruff over `src/` and `tests/`. |
+| `make format-check` | Check Black formatting without changing files. |
+| `make typecheck` | Run mypy over `src/`. |
+| `make verify` | Run lint, formatting, type checks, and tests. |
 | `make format` | Black + ruff `--fix`. |
 | `make bench` | Full mock-LLM benchmark. |
 | `make bench-live` | Request adapter-specific live paths; verify each provider prerequisite and log. |
